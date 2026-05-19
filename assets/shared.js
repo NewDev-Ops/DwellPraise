@@ -5,10 +5,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ========== Mobile Menu Toggle ==========
   var menuBtn = document.getElementById('mobile-menu-btn');
-  if (menuBtn) {
+  var mobileNav = document.getElementById('mobile-nav');
+  var menuIcon = document.getElementById('menu-icon');
+
+  if (menuBtn && mobileNav) {
     menuBtn.addEventListener('click', function () {
-      var nav = document.getElementById('mobile-nav');
-      if (nav) nav.classList.toggle('hidden');
+      var isOpen = mobileNav.classList.contains('open');
+      if (isOpen) {
+        mobileNav.classList.remove('open');
+        if (menuIcon) {
+          menuIcon.textContent = 'menu';
+          menuIcon.classList.remove('open');
+        }
+      } else {
+        mobileNav.classList.add('open');
+        if (menuIcon) {
+          menuIcon.textContent = 'close';
+          menuIcon.classList.add('open');
+        }
+      }
+    });
+
+    // Close mobile nav on link click
+    var navLinks = mobileNav.querySelectorAll('a');
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileNav.classList.remove('open');
+        if (menuIcon) {
+          menuIcon.textContent = 'menu';
+          menuIcon.classList.remove('open');
+        }
+      });
     });
   }
 
