@@ -61,7 +61,7 @@
 <section class="px-margin-mobile md:px-margin-desktop py-block-gap-lg max-w-[1440px] mx-auto">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 <!-- YouTube Card -->
-<a href="https://m.youtube.com/@dwellpraise" target="_blank" rel="noopener noreferrer" class="md:col-span-8 bg-surface-container group border border-outline-variant/20 hover:border-error transition-colors relative overflow-hidden min-h-[400px] flex flex-col justify-between p-8 card-lift reveal" data-delay="100">
+<a id="youtube-messages" href="https://m.youtube.com/@dwellpraise" target="_blank" rel="noopener noreferrer" class="md:col-span-8 bg-surface-container group border border-outline-variant/20 hover:border-error transition-colors relative overflow-hidden min-h-[400px] flex flex-col justify-between p-8 card-lift reveal" data-delay="100">
 <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10"></div>
 <img alt="Worship Background" class="absolute inset-0 w-full h-full object-cover grayscale opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700 z-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAvwW8eHKM0gwueCYFQnMnOg1MiqocyPnOj7I7E1_ZBbGgsyfLLQ16em0jRhlBWOtOyk6LNo0GetRx6XLYa2SAENGOMa0QvJouIjETq6glwpc9KYHx_5QChpGfreyaF38A9iLHWH7KP-IWydqymErIe5mPrj23euFwr48u3Wyj31oTL5j5_7JOZrfev3EViB_9r9N6nt8wWq-7ke8dR8vwmvQpqY7HBktxqLgo35_6xYdeiKQn0Zz322BDYSf8kNwArY2peCk0vQ"/>
 <div class="relative z-20 flex justify-between items-start w-full">
@@ -74,7 +74,7 @@
 </div>
 </a>
 <!-- Spotify Card -->
-<div class="md:col-span-4 bg-secondary-container group cursor-pointer border border-outline-variant/20 hover:border-secondary transition-colors relative overflow-hidden min-h-[400px] flex flex-col justify-between p-8 card-lift reveal" data-delay="200">
+<div id="spotify-embed" class="md:col-span-4 bg-secondary-container group cursor-pointer border border-outline-variant/20 hover:border-secondary transition-colors relative overflow-hidden min-h-[400px] flex flex-col justify-between p-8 card-lift reveal" data-delay="200">
 <div class="relative z-20 flex justify-between items-start w-full">
 <span class="inline-block bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-3 py-1">Audio</span>
 <span class="material-symbols-outlined text-4xl text-secondary">graphic_eq</span>
@@ -108,6 +108,8 @@
 </div>
 </div>
 </section>
+<!-- Latest from Substack -->
+<section id="substack-latest" class="px-margin-mobile md:px-margin-desktop pb-block-gap-lg max-w-[1440px] mx-auto"></section>
 <!-- Featured Series -->
 <section class="px-margin-mobile md:px-margin-desktop pb-block-gap-lg max-w-[1440px] mx-auto">
 <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase mb-12 reveal">Featured Series</h2>
@@ -170,4 +172,5 @@
 </div>
 </footer>
 <script src="assets/shared.js"></script>
+<script src="assets/social-feed.js"></script>
 </body></html>
