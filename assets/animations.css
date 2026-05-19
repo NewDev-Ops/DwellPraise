@@ -245,40 +245,6 @@
   transform: scale(1.05);
 }
 
-/* ========== Card Border Glow ========== */
-.card-glow {
-  position: relative;
-}
-.card-glow::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-  z-index: 1;
-}
-.card-glow:hover::after {
-  opacity: 1;
-}
-
-/* ========== Form Input Focus ========== */
-.form-input {
-  position: relative;
-}
-.form-input::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 0; height: 2px;
-  background: var(--tw-text-opacity, currentColor);
-  transition: width 0.4s var(--ease-out-expo);
-}
-.form-input:focus-within::after {
-  width: 100%;
-}
-
 /* ========== View All Arrow ========== */
 .view-all-arrow .material-symbols-outlined {
   transition: transform 0.3s var(--ease-out-expo);
@@ -295,8 +261,8 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--tw-color-secondary, #a1d494);
-  color: var(--tw-color-on-secondary, #0a3909);
+  background: #a1d494;
+  color: #0a3909;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -316,7 +282,7 @@
   transition: opacity 0.35s ease, transform 0.35s var(--ease-out-expo), visibility 0s 0s, background 0.25s ease;
 }
 .back-to-top:hover {
-  background: var(--tw-color-secondary-fixed, #bcf0ae);
+  background: #bcf0ae;
   transform: translateY(-2px);
 }
 .back-to-top:active {
@@ -363,6 +329,40 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #444748;
+}
+
+/* ========== Print Styles ========== */
+@media print {
+  *, *::before, *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  nav, footer, .back-to-top, .skip-link, .mobile-nav {
+    display: none !important;
+  }
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+  a[href^="http"]::after,
+  a[href^="mailto:"]::after,
+  a[href^="tel:"]::after {
+    content: "";
+  }
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+  }
 }
 
 /* ========== Reduced Motion ========== */
