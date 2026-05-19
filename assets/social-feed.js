@@ -16,7 +16,7 @@ const SOCIAL_CONFIG = {
     // Embed a playlist or podcast show
     // Playlist: https://open.spotify.com/embed/playlist/YOUR_ID
     // Show: https://open.spotify.com/embed/show/YOUR_ID
-    embedUrl: 'https://open.spotify.com/playlist/5bCutUwhS76nlRTyGJxpHb?si=E-o-LGYtT4qGTQjBUt_Spg',
+    embedUrl: 'https://open.spotify.com/embed/playlist/5bCutUwhS76nlRTyGJxpHb',
   },
   // Cache duration: 1 hour (3600000 ms)
   cacheTTL: 3600000,

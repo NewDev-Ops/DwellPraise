@@ -1,3 +1,11 @@
+/* ========== Easing Variables ========== */
+:root {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
 /* ========== Page Load Entrance ========== */
 @keyframes fadeSlideUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -16,32 +24,37 @@
   to   { opacity: 0; transform: translateY(-10px); }
 }
 
-.page-enter  { animation: pageFadeIn 0.5s ease-out both; }
-.page-exit   { animation: pageFadeOut 0.25s ease-in both; }
+.page-enter  { animation: pageFadeIn 0.6s var(--ease-out-expo) both; }
+.page-exit   { animation: pageFadeOut 0.3s var(--ease-in-out-quint) both; }
 
 /* ========== Scroll-triggered Reveal ========== */
 .reveal {
   opacity: 0;
   transform: translateY(35px);
-  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.8s var(--ease-out-quart),
+              transform 0.8s var(--ease-out-quart);
 }
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
+.reveal[data-delay="50"]  { transition-delay: 0.05s; }
 .reveal[data-delay="100"] { transition-delay: 0.1s; }
 .reveal[data-delay="150"] { transition-delay: 0.15s; }
 .reveal[data-delay="200"] { transition-delay: 0.2s; }
+.reveal[data-delay="250"] { transition-delay: 0.25s; }
 .reveal[data-delay="300"] { transition-delay: 0.3s; }
+.reveal[data-delay="350"] { transition-delay: 0.35s; }
 .reveal[data-delay="400"] { transition-delay: 0.4s; }
+.reveal[data-delay="450"] { transition-delay: 0.45s; }
 .reveal[data-delay="500"] { transition-delay: 0.5s; }
+.reveal[data-delay="600"] { transition-delay: 0.6s; }
 
 .reveal-left {
   opacity: 0;
   transform: translateX(-30px);
-  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.8s var(--ease-out-quart),
+              transform 0.8s var(--ease-out-quart);
 }
 .reveal-left.visible {
   opacity: 1;
@@ -51,8 +64,8 @@
 .reveal-right {
   opacity: 0;
   transform: translateX(30px);
-  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.8s var(--ease-out-quart),
+              transform 0.8s var(--ease-out-quart);
 }
 .reveal-right.visible {
   opacity: 1;
@@ -62,8 +75,8 @@
 .reveal-scale {
   opacity: 0;
   transform: scale(0.96);
-  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.7s var(--ease-out-quart),
+              transform 0.7s var(--ease-out-quart);
 }
 .reveal-scale.visible {
   opacity: 1;
@@ -76,7 +89,7 @@
 }
 .hero-headline > span {
   display: block;
-  animation: fadeSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: fadeSlideUp 0.9s var(--ease-out-expo) both;
 }
 .hero-headline > span:nth-child(1) { animation-delay: 0.15s; }
 .hero-headline > span:nth-child(2) { animation-delay: 0.35s; }
@@ -84,12 +97,12 @@
 
 .hero-subtitle {
   opacity: 0;
-  animation: fadeSlideUp 0.8s ease-out 0.5s both;
+  animation: fadeSlideUp 0.9s var(--ease-out-expo) 0.5s both;
 }
 
 .hero-cta {
   opacity: 0;
-  animation: fadeSlideUp 0.8s ease-out 0.7s both;
+  animation: fadeSlideUp 0.9s var(--ease-out-expo) 0.7s both;
 }
 
 /* ========== Nav Link Hover Line ========== */
@@ -102,7 +115,7 @@
   bottom: 0; left: 50%;
   width: 0; height: 2px;
   background: currentColor;
-  transition: width 0.3s ease, left 0.3s ease;
+  transition: width 0.35s var(--ease-out-expo), left 0.35s var(--ease-out-expo);
 }
 .nav-link:hover::after {
   width: 100%; left: 0;
@@ -127,7 +140,7 @@
     transparent 70%
   );
   transform: translateX(-100%) skewX(-15deg);
-  transition: transform 0.6s ease;
+  transition: transform 0.7s var(--ease-out-expo);
   pointer-events: none;
 }
 .btn-shimmer:hover::before {
@@ -136,8 +149,8 @@
 
 /* ========== Card Lift ========== */
 .card-lift {
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.4s var(--ease-out-expo),
+              box-shadow 0.4s var(--ease-out-expo);
   will-change: transform;
 }
 .card-lift:hover {
@@ -164,7 +177,7 @@
   top: 0; left: 0;
   width: 0; height: 100%;
   border-left: 2px solid currentColor;
-  transition: width 0.5s ease;
+  transition: width 0.5s var(--ease-out-expo);
 }
 .border-reveal.visible::before {
   width: 4px;
@@ -177,7 +190,7 @@
   opacity: 0;
   transform: translateY(-10px);
   visibility: hidden;
-  transition: max-height 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+  transition: max-height 0.45s var(--ease-out-expo),
               opacity 0.35s ease-out,
               transform 0.35s ease-out,
               visibility 0s 0.45s;
@@ -187,7 +200,7 @@
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
-  transition: max-height 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+  transition: max-height 0.45s var(--ease-out-expo),
               opacity 0.35s ease-out 0.05s,
               transform 0.35s ease-out 0.05s,
               visibility 0s 0s;
@@ -210,15 +223,146 @@
 
 /* Hamburger icon rotation */
 .menu-btn-icon {
-  transition: transform 0.35s ease;
+  transition: transform 0.35s var(--ease-out-expo);
 }
 .menu-btn-icon.open {
   transform: rotate(90deg);
 }
 
+/* ========== Social Icon Hover ========== */
+.social-icon {
+  transition: transform 0.3s var(--ease-spring), color 0.25s ease;
+}
+.social-icon:hover {
+  transform: translateY(-2px) scale(1.1);
+}
+
+/* ========== Card Image Slow Zoom ========== */
+.card-image-zoom img {
+  transition: transform 0.8s var(--ease-out-expo), opacity 0.5s ease;
+}
+.card-image-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* ========== Card Border Glow ========== */
+.card-glow {
+  position: relative;
+}
+.card-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.card-glow:hover::after {
+  opacity: 1;
+}
+
+/* ========== Form Input Focus ========== */
+.form-input {
+  position: relative;
+}
+.form-input::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--tw-text-opacity, currentColor);
+  transition: width 0.4s var(--ease-out-expo);
+}
+.form-input:focus-within::after {
+  width: 100%;
+}
+
+/* ========== View All Arrow ========== */
+.view-all-arrow .material-symbols-outlined {
+  transition: transform 0.3s var(--ease-out-expo);
+}
+.view-all-arrow:hover .material-symbols-outlined {
+  transform: translateX(4px);
+}
+
+/* ========== Back to Top Button ========== */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--tw-color-secondary, #a1d494);
+  color: var(--tw-color-on-secondary, #0a3909);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s var(--ease-out-expo), visibility 0s 0.35s, background 0.25s ease;
+  z-index: 40;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.35s var(--ease-out-expo), visibility 0s 0s, background 0.25s ease;
+}
+.back-to-top:hover {
+  background: var(--tw-color-secondary-fixed, #bcf0ae);
+  transform: translateY(-2px);
+}
+.back-to-top:active {
+  transform: translateY(0);
+}
+
+/* ========== Navbar Scroll Effect ========== */
+.nav-scrolled {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(18, 20, 20, 0.85) !important;
+  border-bottom-color: rgba(68, 71, 72, 0.3) !important;
+  transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
 /* ========== Smooth Scroll ========== */
 html {
   scroll-behavior: smooth;
+}
+
+/* ========== Focus Visible ========== */
+*:focus-visible {
+  outline: 2px solid #a1d494;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ========== Selection ========== */
+::selection {
+  background: #a1d494;
+  color: #0a3909;
+}
+
+/* ========== Scrollbar ========== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #121414;
+}
+::-webkit-scrollbar-thumb {
+  background: #333535;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444748;
 }
 
 /* ========== Reduced Motion ========== */
