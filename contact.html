@@ -7,6 +7,7 @@
 <script src="assets/tailwind-config.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="assets/animations.css" rel="stylesheet"/>
 <style>
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   ::-webkit-scrollbar { display: none; }
@@ -21,13 +22,13 @@
 <span class="font-headline-md text-headline-md font-bold text-on-surface uppercase tracking-tight">DwellPraise</span>
 </a>
 <div class="hidden md:flex items-center gap-8 font-label-bold text-label-bold uppercase tracking-widest">
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2" href="about.html">About</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2" href="media.html">Media</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="media.html">Media</a>
 <a class="text-primary border-b-2 border-primary pb-1 px-4 py-2" href="contact.html">Contact</a>
 </div>
 <div class="hidden md:block">
-<a href="contact.html" class="bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-8 py-4 hover:bg-secondary-fixed transition-colors inline-block">Connect</a>
+<a href="contact.html" class="bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-8 py-4 hover:bg-secondary-fixed transition-colors inline-block btn-shimmer">Connect</a>
 </div>
 <button id="mobile-menu-btn" class="md:hidden text-on-surface">
 <span class="material-symbols-outlined text-3xl">menu</span>
@@ -45,14 +46,16 @@
 <!-- Main Content -->
 <main class="flex-grow flex flex-col justify-center px-margin-mobile md:px-margin-desktop py-block-gap-lg max-w-[1440px] mx-auto w-full">
 <!-- Header Section -->
-<div class="w-full md:w-2/3 mb-12">
-<h1 class="font-headline-xl text-headline-xl text-primary mb-6">REACH OUT.</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Whether you have a question, a testimony, or simply want to connect, we are here. Fill out the form below or reach us through our social channels.</p>
+<div class="w-full md:w-2/3 mb-12 reveal">
+<h1 class="hero-headline font-headline-xl text-headline-xl text-primary mb-6">
+<span>REACH OUT.</span>
+</h1>
+<p class="hero-subtitle font-body-lg text-body-lg text-on-surface-variant max-w-xl">Whether you have a question, a testimony, or simply want to connect, we are here. Fill out the form below or reach us through our social channels.</p>
 </div>
 <!-- Contact Grid -->
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 <!-- Contact Form -->
-<div class="lg:col-span-8 bg-surface-container p-8 md:p-12 border border-outline-variant/20">
+<div class="lg:col-span-8 bg-surface-container p-8 md:p-12 border border-outline-variant/20 reveal" data-delay="100">
 <form action="https://formspree.io/f/YOUR_FORM_ID" class="flex flex-col gap-8" method="POST">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="flex flex-col gap-2">
@@ -73,7 +76,7 @@
 <textarea class="bg-transparent border-0 border-b border-outline text-on-surface font-body-md text-body-md focus:ring-0 focus:border-tertiary px-0 py-3 transition-colors placeholder:text-on-surface-variant/50 resize-none" id="message" name="message" placeholder="How can we help you?" rows="4" required></textarea>
 </div>
 <div class="mt-4">
-<button class="bg-primary text-on-primary px-12 py-4 font-label-bold text-label-bold uppercase tracking-widest hover:bg-primary-fixed transition-colors inline-flex items-center gap-4" type="submit">
+<button class="bg-primary text-on-primary px-12 py-4 font-label-bold text-label-bold uppercase tracking-widest hover:bg-primary-fixed transition-colors inline-flex items-center gap-4 btn-shimmer" type="submit">
 Send Message
 <span class="material-symbols-outlined">arrow_forward</span>
 </button>
@@ -82,7 +85,7 @@ Send Message
 </div>
 <!-- Info Card -->
 <div class="lg:col-span-4 flex flex-col gap-8">
-<div class="bg-surface-container p-8 border border-outline-variant/20 flex flex-col gap-6 h-full">
+<div class="bg-surface-container p-8 border border-outline-variant/20 flex flex-col gap-6 h-full reveal" data-delay="200">
 <h3 class="font-headline-md text-headline-md text-secondary">INFO</h3>
 <div class="flex flex-col gap-4">
 <div class="flex items-start gap-4">

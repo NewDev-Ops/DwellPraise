@@ -7,6 +7,7 @@
 <script src="assets/tailwind-config.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="assets/animations.css" rel="stylesheet"/>
 <style>
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   .hero-gradient { background: radial-gradient(circle at 50% 0%, rgba(161, 212, 148, 0.15) 0%, rgba(18, 20, 20, 1) 70%); }
@@ -22,12 +23,12 @@
 </a>
 <div class="hidden md:flex items-center gap-8 font-label-bold text-label-bold uppercase tracking-widest">
 <a class="text-primary border-b-2 border-primary pb-1 px-4 py-2" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2" href="about.html">About</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2" href="media.html">Media</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2" href="contact.html">Contact</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="media.html">Media</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="contact.html">Contact</a>
 </div>
 <div class="hidden md:block">
-<a href="contact.html" class="bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-8 py-4 hover:bg-secondary-fixed transition-colors inline-block">Connect</a>
+<a href="contact.html" class="bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-8 py-4 hover:bg-secondary-fixed transition-colors inline-block btn-shimmer">Connect</a>
 </div>
 <button id="mobile-menu-btn" class="md:hidden text-on-surface">
 <span class="material-symbols-outlined text-3xl">menu</span>
@@ -47,21 +48,24 @@
 <!-- Hero Section -->
 <section class="hero-gradient min-h-[80vh] flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop py-block-gap-lg text-center border-b border-outline-variant/20">
 <div class="max-w-[1000px] mx-auto flex flex-col items-center gap-block-gap-sm">
-<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface uppercase leading-none">Nevertheless the Gospel <br/> Shall be Preached</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">A digital ministry exploring modern reverence and architectural stability through structured minimalism.</p>
-<div class="mt-8">
-<a href="about.html" class="inline-block bg-tertiary text-on-tertiary px-8 py-4 font-label-bold text-label-bold uppercase tracking-wider hover:bg-tertiary-fixed transition-colors border border-tertiary">Join the Movement</a>
+<h1 class="hero-headline font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface uppercase leading-none">
+<span>Nevertheless the Gospel</span>
+<span>Shall be Preached</span>
+</h1>
+<p class="hero-subtitle font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">A digital ministry exploring modern reverence and architectural stability through structured minimalism.</p>
+<div class="hero-cta mt-8">
+<a href="about.html" class="inline-block bg-tertiary text-on-tertiary px-8 py-4 font-label-bold text-label-bold uppercase tracking-wider hover:bg-tertiary-fixed transition-colors border border-tertiary btn-shimmer">Join the Movement</a>
 </div>
 </div>
 </section>
 <!-- Social Hub Bento Grid -->
 <section class="px-margin-mobile md:px-margin-desktop py-block-gap-lg max-w-[1440px] mx-auto">
-<div class="flex justify-between items-end mb-12 border-b border-outline-variant/20 pb-4">
+<div class="flex justify-between items-end mb-12 border-b border-outline-variant/20 pb-4 reveal">
 <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase">Social Hub</h2>
 <a class="font-label-bold text-label-bold text-secondary uppercase hover:text-secondary-fixed flex items-center gap-2" href="media.html">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[300px]">
-<div class="md:col-span-8 row-span-2 relative group overflow-hidden border border-outline-variant/20 bg-surface-container">
+<div class="md:col-span-8 row-span-2 relative group overflow-hidden border border-outline-variant/20 bg-surface-container reveal" data-delay="100">
 <img alt="Featured Content" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtlSheWSrVLx91J_y5kjQn9toXAQ0JAb66h5BlcJnbFJMICnyOONrDLV6BKtOyAsXcmilVNb7-ptZHQv8uNmzYEJkj25CjT-PWNJffyUxpdNFt-OVTyzREzgZX2Gn6Ovwgn4PwCCkuc_qLOolcnuaQXyrcZdOtoEYlm7vZdhlYWN0CUyPi133FQ94Up95atAcpL1ZsF_j4CDZINFI1XyX8QLmg7S2SdQesckj87xKkBAAQjp5Fviaax0eL85qYRpxI7v9VWJx3FA"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
 <div class="absolute bottom-0 left-0 p-8">
@@ -70,7 +74,7 @@
 <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Exploring structural integrity in modern spiritual practices.</p>
 </div>
 </div>
-<div class="md:col-span-4 row-span-1 border border-outline-variant/20 bg-surface-container-high p-6 flex flex-col justify-between hover:bg-surface-bright transition-colors">
+<div class="md:col-span-4 row-span-1 border border-outline-variant/20 bg-surface-container-high p-6 flex flex-col justify-between hover:bg-surface-bright transition-colors reveal" data-delay="200">
 <div class="flex items-center gap-3 text-tertiary">
 <span class="material-symbols-outlined">forum</span>
 <span class="font-label-bold text-caption uppercase">Threads</span>
@@ -80,7 +84,7 @@
 <span class="font-label-bold text-caption text-on-surface-variant uppercase mt-4 block">@dwellpraise</span>
 </div>
 </div>
-<div class="md:col-span-4 row-span-1 border border-outline-variant/20 bg-surface-container-high p-6 flex flex-col justify-between hover:bg-surface-bright transition-colors">
+<div class="md:col-span-4 row-span-1 border border-outline-variant/20 bg-surface-container-high p-6 flex flex-col justify-between hover:bg-surface-bright transition-colors reveal" data-delay="300">
 <div class="flex items-center gap-3 text-secondary">
 <span class="material-symbols-outlined">photo_camera</span>
 <span class="font-label-bold text-caption uppercase">Instagram</span>
@@ -93,8 +97,8 @@
 </section>
 <!-- Magazine Block -->
 <section class="bg-secondary text-on-secondary py-block-gap-lg px-margin-mobile md:px-margin-desktop text-center">
-<div class="max-w-4xl mx-auto">
-<span class="material-symbols-outlined text-4xl mb-6 block mx-auto">format_quote</span>
+<div class="max-w-4xl mx-auto reveal">
+<span class="material-symbols-outlined text-4xl mb-6 block mx-auto pulse-icon">format_quote</span>
 <h2 class="font-headline-md text-headline-md uppercase leading-tight mb-8">Structured minimalism is not the absence of design, but the intense focus on purpose.</h2>
 <span class="font-label-bold text-label-bold uppercase tracking-widest border-t-2 border-on-secondary/30 pt-4 inline-block">Design Philosophy</span>
 </div>
