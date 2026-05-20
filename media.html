@@ -34,10 +34,11 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "NGO",
   "name": "DwellPraise",
   "url": "https://www.dwellpraise.com",
   "logo": "https://www.dwellpraise.com/assets/Dark Coloured.png",
+  "description": "A ministry cultivating dwelling places for God through structured, intentional content.",
   "sameAs": [
     "https://www.instagram.com/dwellpraise",
     "https://www.threads.net/@dwellpraise",
@@ -45,6 +46,26 @@
     "https://x.com/dwellpraise",
     "https://whatsapp.com/channel/0029Vb8ASUxC6ZvcQiTnL83a",
     "https://m.youtube.com/@dwellpraise"
+  ],
+  "hasPart": [
+    {
+      "@type": "WebPage",
+      "name": "About Us",
+      "url": "https://www.dwellpraise.com/about.html",
+      "description": "Learn about DwellPraise's vision, mission, and digital ministry approach."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Media & Resources",
+      "url": "https://www.dwellpraise.com/media.html",
+      "description": "Sermons, worship sessions, podcasts, and community stories."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Contact Us",
+      "url": "https://www.dwellpraise.com/contact.html",
+      "description": "Reach out with questions, testimonies, or to connect with our community."
+    }
   ]
 }
 </script>
@@ -62,7 +83,7 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Media",
+      "name": "Media & Resources",
       "item": "https://www.dwellpraise.com/media.html"
     }
   ]
@@ -135,6 +156,14 @@
 <a class="mobile-nav-link text-on-surface-variant hover:text-on-surface pb-2 uppercase border-b border-outline-variant/20" href="media.html" role="menuitem">Media</a>
 <a class="mobile-nav-link text-on-surface-variant hover:text-on-surface pb-2 uppercase" href="contact.html" role="menuitem">Contact</a>
 </div>
+</div>
+</nav>
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="bg-background w-full border-b border-outline-variant/10">
+<div class="flex items-center gap-2 px-margin-mobile md:px-margin-desktop py-3 max-w-[1440px] mx-auto text-sm">
+<a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Home</a>
+<span aria-hidden="true" class="material-symbols-outlined text-xs text-outline-variant">chevron_right</span>
+<span class="text-on-surface font-label-bold text-label-bold" aria-current="page">Media</span>
 </div>
 </nav>
 <!-- Main Content -->
