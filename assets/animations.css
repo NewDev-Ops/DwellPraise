@@ -445,3 +445,12 @@ html {
     scroll-behavior: auto !important;
   }
 }
+
+/* ========== Trademark Symbol ========== */
+sup.tm, .tm {
+  font-size: 0.5em;
+  vertical-align: top;
+  margin-left: 0.125rem;
+  opacity: 0.7;
+  user-select: none;
+}
