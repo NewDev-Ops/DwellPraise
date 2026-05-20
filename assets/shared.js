@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ========== Scroll-Triggered Reveal ==========
   var revealElements = document.querySelectorAll(
-    '.reveal, .reveal-left, .reveal-right, .reveal-scale, .border-reveal'
+    '.reveal, .reveal-left, .reveal-right, .reveal-scale, .border-reveal, .scale-in'
   );
 
   if (revealElements.length > 0 && 'IntersectionObserver' in window) {
@@ -202,6 +202,107 @@ document.addEventListener('DOMContentLoaded', function () {
       link.classList.add('text-primary', 'border-b-2', 'border-primary', 'pb-1');
       link.classList.remove('text-on-surface-variant', 'nav-link');
     }
+  });
+
+  // ========== Ripple Effect ==========
+  var rippleElements = document.querySelectorAll('.ripple');
+  rippleElements.forEach(function (el) {
+    el.addEventListener('pointerdown', function (e) {
+      var rect = el.getBoundingClientRect();
+      var x = ((e.clientX - rect.left) / rect.width) * 100;
+      var y = ((e.clientY - rect.top) / rect.height) * 100;
+      el.style.setProperty('--ripple-x', x + '%');
+      el.style.setProperty('--ripple-y', y + '%');
+    });
+  });
+
+  // ========== Magnetic Button Effect ==========
+  var magneticElements = document.querySelectorAll('.magnetic-area');
+  magneticElements.forEach(function (el) {
+    el.addEventListener('mousemove', function (e) {
+      var rect = el.getBoundingClientRect();
+      var x = e.clientX - rect.left - rect.width / 2;
+      var y = e.clientY - rect.top - rect.height / 2;
+      el.style.transform = 'translate(' + (x * 0.15) + 'px, ' + (y * 0.15) + 'px)';
+    });
+    el.addEventListener('mouseleave', function () {
+      el.style.transform = 'translate(0, 0)';
+    });
+  });
+
+  // ========== Parallax on Scroll ==========
+  var parallaxContainers = document.querySelectorAll('.parallax-container');
+  if (parallaxContainers.length > 0) {
+    var parallaxTicking = false;
+    function updateParallax() {
+      parallaxContainers.forEach(function (container) {
+        var rect = container.getBoundingClientRect();
+        var centerOffset = rect.top + rect.height / 2 - window.innerHeight / 2;
+        var speed = parseFloat(container.dataset.parallaxSpeed) || 0.05;
+        var child = container.querySelector(':scope > *');
+        if (child) {
+          child.style.transform = 'translateY(' + (centerOffset * speed) + 'px)';
+        }
+      });
+      parallaxTicking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!parallaxTicking) {
+        requestAnimationFrame(updateParallax);
+        parallaxTicking = true;
+      }
+    }, { passive: true });
+  }
+
+  // ========== Count-up Animation ==========
+  var countElements = document.querySelectorAll('.count-up');
+  if (countElements.length > 0 && 'IntersectionObserver' in window) {
+    var countObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            var target = parseInt(el.dataset.target) || 0;
+            var duration = parseInt(el.dataset.duration) || 2000;
+            var start = 0;
+            var startTime = null;
+            function animate(currentTime) {
+              if (!startTime) startTime = currentTime;
+              var progress = Math.min((currentTime - startTime) / duration, 1);
+              var eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.floor(eased * target).toLocaleString();
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              } else {
+                el.textContent = target.toLocaleString();
+              }
+            }
+            requestAnimationFrame(animate);
+            countObserver.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    countElements.forEach(function (el) { countObserver.observe(el); });
+  }
+
+  // ========== Tilt Effect on Cards ==========
+  var tiltCards = document.querySelectorAll('.tilt-card');
+  tiltCards.forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width;
+      var y = (e.clientY - rect.top) / rect.height;
+      var rotateX = (y - 0.5) * -8;
+      var rotateY = (x - 0.5) * 8;
+      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-4px)';
+    });
+    card.addEventListener('mouseleave', function () {
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+      card.style.transition = 'transform 0.5s var(--ease-out-expo)';
+      setTimeout(function () { card.style.transition = ''; }, 500);
+    });
   });
 
 });
