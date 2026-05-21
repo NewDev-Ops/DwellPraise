@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.dwellpraise.com/sitemap.xml
+Sitemap: https://dwellpraise.gt.tc/sitemap.xml
