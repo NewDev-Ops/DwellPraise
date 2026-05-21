@@ -96,7 +96,7 @@
   .skip-link { position: absolute; top: -100%; left: 1rem; z-index: 100; background: #a1d494; color: #0a3909; padding: 0.75rem 1.5rem; font-weight: 700; font-size: 14px; border-radius: 0.25rem; text-decoration: none; transition: top 0.2s ease; }
   .skip-link:focus { top: 1rem; }
 
-  .hero-gradient-gen { background: radial-gradient(circle at 50% 0%, rgba(161, 212, 148, 0.12) 0%, rgba(18, 20, 20, 1) 70%); }
+  .hero-gradient-gen { background: radial-gradient(circle at 50% 0%, rgba(91, 155, 213, 0.10) 0%, rgba(18, 20, 20, 1) 70%); }
 
   .pct-ring {
     position: relative;
@@ -106,11 +106,11 @@
   }
   .pct-ring svg { transform: rotate(-90deg); width: 120px; height: 120px; }
   .pct-ring svg circle { fill: none; stroke-width: 5; stroke-linecap: round; }
-  .pct-ring .ring-bg { stroke: rgba(161, 212, 148, 0.12); }
-  .pct-ring .ring-fill { stroke: #a1d494; stroke-dasharray: 339.292; transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  .pct-ring .ring-bg { stroke: rgba(91, 155, 213, 0.10); }
+  .pct-ring .ring-fill { stroke: #5b9bd5; stroke-dasharray: 339.292; transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
   .pct-ring .ring-value {
     position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Sans', sans-serif; font-size: 1.5rem; font-weight: 700; color: #a1d494;
+    font-family: 'DM Sans', sans-serif; font-size: 1.5rem; font-weight: 700; color: #5b9bd5;
   }
 
   .pct-ring.tertiary .ring-fill { stroke: #ffb68c; }
@@ -130,7 +130,7 @@
 
   .impact-card {
     position: relative;
-    border-left: 3px solid #a1d494;
+    border-left: 3px solid #5b9bd5;
   }
   .impact-card::before {
     content: '';
@@ -139,7 +139,7 @@
     left: -3px;
     width: 3px;
     height: 100%;
-    background: linear-gradient(180deg, #a1d494, transparent);
+    background: linear-gradient(180deg, #5b9bd5, transparent);
   }
 
   .coming-soon-badge {
@@ -160,6 +160,35 @@
     border-radius: 2px;
     white-space: nowrap;
   }
+
+  /* Generosity page blue theme overrides */
+  .card-lift:hover {
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3), 0 0 0 1px rgba(91, 155, 213, 0.08);
+  }
+  input:focus, textarea:focus {
+    box-shadow: 0 1px 0 0 #5b9bd5, 0 0 0 3px rgba(91, 155, 213, 0.06);
+  }
+  .section-divider::after {
+    background: linear-gradient(90deg, transparent, rgba(91, 155, 213, 0.12), transparent);
+  }
+  .logo-glow:hover {
+    filter: drop-shadow(0 0 8px rgba(91, 155, 213, 0.25));
+  }
+  *:focus-visible {
+    outline: 2px solid #5b9bd5;
+  }
+  ::selection {
+    background: #5b9bd5;
+    color: #1a2e40;
+  }
+  .back-to-top {
+    background: #5b9bd5;
+    color: #1a2e40;
+  }
+  .back-to-top:hover {
+    background: #7eb8e0;
+    box-shadow: 0 8px 24px rgba(91, 155, 213, 0.15);
+  }
 </style>
 </head>
 <body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary">
@@ -176,12 +205,12 @@
 <a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="index.html" role="menuitem">Home</a>
 <a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="about.html" role="menuitem">About</a>
 <a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="media.html" role="menuitem">Media</a>
-<a class="text-secondary border-b-2 border-secondary pb-1 px-4 py-2" href="generosity.html" role="menuitem">Generosity</a>
+<a class="text-blue border-b-2 border-blue pb-1 px-4 py-2" href="generosity.html" role="menuitem">Generosity</a>
 <a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="contact.html" role="menuitem">Contact</a>
 </div>
 <div class="hidden md:block">
 <span class="coming-soon-badge">
-<a href="#partner" class="bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-8 py-4 inline-block btn-disabled">Partner</a>
+<a href="#partner" class="bg-blue text-on-blue font-label-bold text-label-bold uppercase px-8 py-4 inline-block btn-disabled">Partner</a>
 </span>
 </div>
 <button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-on-surface p-2 rounded focus-visible:outline-2 focus-visible:outline-secondary" id="mobile-menu-btn" type="button">
@@ -193,7 +222,7 @@
 <a class="mobile-nav-link text-on-surface-variant hover:text-on-surface pb-2 uppercase border-b border-outline-variant/20" href="index.html" role="menuitem">Home</a>
 <a class="mobile-nav-link text-on-surface-variant hover:text-on-surface pb-2 uppercase border-b border-outline-variant/20" href="about.html" role="menuitem">About</a>
 <a class="mobile-nav-link text-on-surface-variant hover:text-on-surface pb-2 uppercase border-b border-outline-variant/20" href="media.html" role="menuitem">Media</a>
-<a class="mobile-nav-link text-secondary pb-2 uppercase border-b border-outline-variant/20" href="generosity.html" role="menuitem">Generosity</a>
+<a class="mobile-nav-link text-blue pb-2 uppercase border-b border-outline-variant/20" href="generosity.html" role="menuitem">Generosity</a>
 <a class="mobile-nav-link text-on-surface-variant hover:text-on-surface pb-2 uppercase" href="contact.html" role="menuitem">Contact</a>
 </div>
 </div>
@@ -202,9 +231,9 @@
 <!-- Breadcrumb -->
 <nav aria-label="Breadcrumb" class="bg-background w-full border-b border-outline-variant/10">
 <div class="flex items-center gap-2 px-margin-mobile md:px-margin-desktop py-3 max-w-[1440px] mx-auto text-sm">
-<a href="index.html" class="text-on-surface-variant hover:text-secondary transition-colors">Home</a>
+<a href="index.html" class="text-on-surface-variant hover:text-blue transition-colors">Home</a>
 <span aria-hidden="true" class="material-symbols-outlined text-xs text-outline-variant">chevron_right</span>
-<a href="about.html" class="text-on-surface-variant hover:text-secondary transition-colors">About</a>
+<a href="about.html" class="text-on-surface-variant hover:text-blue transition-colors">About</a>
 <span aria-hidden="true" class="material-symbols-outlined text-xs text-outline-variant">chevron_right</span>
 <span class="text-on-surface font-label-bold text-label-bold" aria-current="page">Encounter Generosity</span>
 </div>
@@ -217,11 +246,11 @@
 <section class="hero-gradient-gen min-h-[70vh] flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop py-block-gap-lg text-center border-b border-outline-variant/20">
 <div class="max-w-[900px] mx-auto flex flex-col items-center gap-block-gap-sm">
 <div class="reveal">
-<span class="inline-block bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-4 py-2 mb-8">A Gospel Giving Movement</span>
+<span class="inline-block bg-blue text-on-blue font-label-bold text-label-bold uppercase px-4 py-2 mb-8">A Gospel Giving Movement</span>
 </div>
 <h1 class="hero-headline font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface uppercase leading-none reveal">
 <span>Encounter</span>
-<span class="text-secondary">Generosity</span>
+<span class="text-blue">Generosity</span>
 </h1>
 <p class="hero-subtitle font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-6">Our Arm to the People. Free generosity to the people.</p>
 <div class="hero-cta mt-10">
@@ -233,16 +262,16 @@
 <!-- Vision Statement -->
 <section class="w-full bg-surface-container-high py-block-gap-sm px-margin-mobile md:px-margin-desktop border-b border-outline-variant/20">
 <div class="max-w-4xl mx-auto text-center reveal">
-<span aria-hidden="true" class="material-symbols-outlined text-4xl mb-6 block mx-auto text-secondary pulse-icon" style="font-variation-settings: 'FILL' 1;">church</span>
+<span aria-hidden="true" class="material-symbols-outlined text-4xl mb-6 block mx-auto text-blue pulse-icon" style="font-variation-settings: 'FILL' 1;">church</span>
 <blockquote class="font-headline-md text-headline-md leading-tight mb-8">The vision for Encounter Generosity is to plant churches that change their communities.</blockquote>
-<div class="w-16 h-px bg-secondary/30 mx-auto"></div>
+<div class="w-16 h-px bg-blue/30 mx-auto"></div>
 </div>
 </section>
 
 <!-- B. The Kingdom Ecosystem -->
 <section id="ecosystem" class="w-full px-margin-mobile md:px-margin-desktop py-block-gap-lg max-w-[1440px] mx-auto">
 <div class="text-center mb-16 reveal">
-<span class="inline-block bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-4 py-2 mb-6">The Financial Engine</span>
+<span class="inline-block bg-blue text-on-blue font-label-bold text-label-bold uppercase px-4 py-2 mb-6">The Financial Engine</span>
 <h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface uppercase mb-4">The Kingdom Ecosystem</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Pray daily, Collect daily, distribute monthly. Built for sustainable impact.</p>
 </div>
@@ -258,7 +287,7 @@
 </svg>
 <div class="ring-value">70%</div>
 </div>
-<h3 class="font-headline-md text-headline-md text-secondary uppercase mb-3">Reinvest</h3>
+<h3 class="font-headline-md text-headline-md text-blue uppercase mb-3">Reinvest</h3>
 <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">Dedicated to building future holding capacity and longevity. Strengthening the foundation for greater kingdom deployment.</p>
 </div>
 
@@ -301,14 +330,14 @@
 <div class="bg-surface-container-high border border-outline-variant/20 p-8 card-lift reveal" data-delay="100">
 <div class="flex items-start gap-6">
 <div class="flex-shrink-0">
-<div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center border border-secondary/20">
-<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<div class="w-14 h-14 rounded-full bg-blue/10 flex items-center justify-center border border-blue/20">
+<span class="material-symbols-outlined text-blue text-3xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
 </div>
 </div>
 <div>
 <div class="flex items-center gap-3 mb-3">
-<h4 class="font-headline-md text-headline-md text-tertiary uppercase">Enablement</h4>
-<span class="font-headline-md text-headline-md text-tertiary">75%</span>
+<h4 class="font-headline-md text-headline-md text-blue uppercase">Enablement</h4>
+<span class="font-headline-md text-headline-md text-blue">75%</span>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">Empowering businesses, kingdom ideas, and creative visions. We prioritize disciples within the Church family first, providing capital, mentorship, and structural support to launch sustainable ventures.</p>
 </div>
@@ -341,7 +370,7 @@
 <section class="w-full bg-surface-container-high py-block-gap-lg border-y border-outline-variant/20">
 <div class="px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
 <div class="text-center mb-16 reveal">
-<span class="inline-block bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-4 py-2 mb-6">Milestones</span>
+<span class="inline-block bg-blue text-on-blue font-label-bold text-label-bold uppercase px-4 py-2 mb-6">Milestones</span>
 <h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface uppercase">Impact & Goals</h2>
 </div>
 
@@ -349,21 +378,21 @@
 <!-- Goal 1: Sustainable Giving -->
 <div class="bg-surface-container border border-outline-variant/20 p-10 text-center card-lift reveal" data-delay="100">
 <div class="mb-6">
-<span class="material-symbols-outlined text-secondary text-5xl mb-4 block mx-auto" style="font-variation-settings: 'FILL' 1;">autorenew</span>
+<span class="material-symbols-outlined text-blue text-5xl mb-4 block mx-auto" style="font-variation-settings: 'FILL' 1;">autorenew</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-4">Sustainable Giving</h3>
-<div class="w-16 h-px bg-secondary/30 mx-auto mb-4"></div>
+<div class="w-16 h-px bg-blue/30 mx-auto mb-4"></div>
 <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-sm mx-auto">We want to be able to give today, and tomorrow and onwards without having to think about it.</p>
 </div>
 
 <!-- Goal 2: Total Generosity -->
 <div class="bg-surface-container border border-outline-variant/20 p-10 text-center card-lift reveal" data-delay="200">
 <div class="mb-6">
-<span class="material-symbols-outlined text-secondary text-5xl mb-4 block mx-auto" style="font-variation-settings: 'FILL' 1;">savings</span>
+<span class="material-symbols-outlined text-blue text-5xl mb-4 block mx-auto" style="font-variation-settings: 'FILL' 1;">savings</span>
 </div>
-<div class="font-headline-xl text-headline-lg-mobile md:text-headline-lg text-secondary uppercase leading-none mb-4">KES 30,000+</div>
+<div class="font-headline-xl text-headline-lg-mobile md:text-headline-lg text-blue uppercase leading-none mb-4">KES 30,000+</div>
 <h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-3">Total Generosity &amp; Investments</h3>
-<div class="w-16 h-px bg-secondary/30 mx-auto mb-4"></div>
+<div class="w-16 h-px bg-blue/30 mx-auto mb-4"></div>
 <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed max-w-sm mx-auto">And growing. Every contribution fuels the next wave of kingdom impact.</p>
 </div>
 </div>
@@ -379,8 +408,8 @@
 <!-- Record 1: Feb 2026 - Worship Harvest -->
 <div class="bg-surface-container border border-outline-variant/20 p-6 md:p-8 impact-card card-lift reveal" data-delay="100">
 <div class="flex items-start gap-4 mb-4">
-<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0 border border-secondary/20">
-<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">music_note</span>
+<div class="w-12 h-12 rounded-full bg-blue/10 flex items-center justify-center flex-shrink-0 border border-blue/20">
+<span class="material-symbols-outlined text-blue text-2xl" style="font-variation-settings: 'FILL' 1;">music_note</span>
 </div>
 <div class="flex-1">
 <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
@@ -388,7 +417,7 @@
 <span class="font-label-bold text-label-bold text-on-surface-variant uppercase text-sm whitespace-nowrap">22 Feb 2026</span>
 </div>
 <div class="flex flex-wrap gap-3 mb-3">
-<span class="inline-block bg-secondary/10 text-secondary font-label-bold text-label-bold uppercase px-3 py-1 text-xs">Tithe</span>
+<span class="inline-block bg-primary/10 text-primary font-label-bold text-label-bold uppercase px-3 py-1 text-xs">Tithe</span>
 <span class="inline-block bg-tertiary/10 text-tertiary font-label-bold text-label-bold uppercase px-3 py-1 text-xs">Worship Ministry Support</span>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">Funds directed to support Encounter To Worship Harvest Ministries, enabling their worship operations and ministry outreach.</p>
@@ -399,8 +428,8 @@
 <!-- Record 2: Mar 2026 - St. Valentine Choir -->
 <div class="bg-surface-container border border-outline-variant/20 p-6 md:p-8 impact-card card-lift reveal" data-delay="200">
 <div class="flex items-start gap-4 mb-4">
-<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0 border border-tertiary/20">
-<span class="material-symbols-outlined text-tertiary text-2xl" style="font-variation-settings: 'FILL' 1;">groups</span>
+<div class="w-12 h-12 rounded-full bg-blue/10 flex items-center justify-center flex-shrink-0 border border-blue/20">
+<span class="material-symbols-outlined text-blue text-2xl" style="font-variation-settings: 'FILL' 1;">groups</span>
 </div>
 <div class="flex-1">
 <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
@@ -408,7 +437,7 @@
 <span class="font-label-bold text-label-bold text-on-surface-variant uppercase text-sm whitespace-nowrap">25 Mar 2026</span>
 </div>
 <div class="flex flex-wrap gap-3 mb-3">
-<span class="inline-block bg-secondary/10 text-secondary font-label-bold text-label-bold uppercase px-3 py-1 text-xs">Tithe</span>
+<span class="inline-block bg-primary/10 text-primary font-label-bold text-label-bold uppercase px-3 py-1 text-xs">Tithe</span>
 <span class="inline-block bg-tertiary/10 text-tertiary font-label-bold text-label-bold uppercase px-3 py-1 text-xs">Choir Support</span>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">Tithe sent to Missional Worship Harvest Ministries. Generosity portion distributed to support St. Valentine Choir operations and ministry activities.</p>
@@ -433,12 +462,12 @@
 <!-- Enablement -->
 <div class="bg-surface-container-high rounded p-6 border border-outline-variant/10">
 <div class="flex items-center gap-3 mb-3">
-<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary text-xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<div class="w-10 h-10 rounded-full bg-blue/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue text-xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
 </div>
 <div>
 <span class="font-label-bold text-label-bold text-on-surface uppercase text-xs">Enablement</span>
-<span class="font-label-bold text-label-bold text-secondary block text-sm">Looming Crafts</span>
+<span class="font-label-bold text-label-bold text-blue block text-sm">Looming Crafts</span>
 </div>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">Business capital provided to a newly started handmade crafts enterprise specializing in fingerless gloves and related products. The support helped the owner navigate a temporary project pause and align production with customer demand.</p>
@@ -462,7 +491,7 @@
 </div>
 
 <div class="flex items-start gap-3 mt-6">
-<span class="material-symbols-outlined text-secondary text-xl flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="material-symbols-outlined text-blue text-xl flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">verified</span>
 <p class="font-body-md text-body-md text-on-surface-variant/70 text-sm">All distributions verified and documented. Tithe paid to Worship Harvest Ministries.</p>
 </div>
 </div>
@@ -473,15 +502,15 @@
 <!-- D. Prayer & Partnership CTA -->
 <section id="partner" class="w-full px-margin-mobile md:px-margin-desktop py-block-gap-lg max-w-[1440px] mx-auto">
 <div class="bg-surface-container border border-outline-variant/20 p-10 md:p-16 text-center reveal">
-<span class="inline-block bg-secondary/10 text-secondary font-label-bold text-label-bold uppercase px-4 py-2 mb-8">A Request to Our Givers</span>
+<span class="inline-block bg-blue/10 text-blue font-label-bold text-label-bold uppercase px-4 py-2 mb-8">A Request to Our Givers</span>
 <h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface uppercase mb-6">
-Pray for the <span class="text-secondary">Initiative</span>
+Pray for the <span class="text-blue">Initiative</span>
 </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-4">Before the partnership doors open, we ask every giver to carry this vision in prayer. Pray that God establishes the foundation, opens the right doors, and raises the right people for this work.</p>
 <p class="font-body-md text-body-md text-on-surface-variant/70 italic mb-12 max-w-xl mx-auto">"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver." — 2 Corinthians 9:7</p>
 
 <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-<a href="https://chat.whatsapp.com/Lk91qB7GRUs4M2MENKcGcA?s=sh&p=a&ilr=2" rel="noopener noreferrer" target="_blank" class="bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-10 py-4 hover:bg-secondary-fixed transition-colors inline-flex items-center gap-3 btn-shimmer btn-hover ripple">
+<a href="https://chat.whatsapp.com/Lk91qB7GRUs4M2MENKcGcA?s=sh&p=a&ilr=2" rel="noopener noreferrer" target="_blank" class="bg-blue text-on-blue font-label-bold text-label-bold uppercase px-10 py-4 hover:bg-blue-fixed transition-colors inline-flex items-center gap-3 btn-shimmer btn-hover ripple">
 <span>Join the Group</span>
 <span class="material-symbols-outlined text-sm">group</span>
 </a>
