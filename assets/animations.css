@@ -270,7 +270,7 @@ input:focus, textarea:focus {
   left: -100%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(161, 212, 148, 0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(161, 212, 148, 0.15), rgba(255, 182, 140, 0.06), transparent);
   animation: shimmer-line 4s ease-in-out infinite;
 }
 @keyframes shimmer-line {
@@ -284,7 +284,7 @@ input:focus, textarea:focus {
   transition: filter 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
 }
 .logo-glow:hover {
-  filter: drop-shadow(0 0 8px rgba(161, 212, 148, 0.3));
+  filter: drop-shadow(0 0 8px rgba(161, 212, 148, 0.3)) drop-shadow(0 0 3px rgba(255, 182, 140, 0.08));
   transform: scale(1.05);
 }
 

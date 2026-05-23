@@ -50,14 +50,7 @@ tailwind.config = {
         "primary-container": "#121212",
         "secondary": "#a1d494",
         "on-background": "#e2e2e2",
-        "blue": "#5b9bd5",
-        "blue-fixed": "#7eb8e0",
-        "blue-fixed-dim": "#a3cfe8",
-        "on-blue": "#1a2e40",
-        "on-blue-fixed": "#0d1a26",
-        "on-blue-fixed-variant": "#1e3a5f",
-        "blue-container": "#1a2e40",
-        "on-blue-container": "#7eb8e0"
+
       },
       borderRadius: {
         DEFAULT: "0.25rem",
