@@ -124,6 +124,31 @@
   .hero-gradient { background: radial-gradient(circle at 50% 0%, rgba(161, 212, 148, 0.15) 0%, rgba(18, 20, 20, 1) 70%); }
   .skip-link { position: absolute; top: -100%; left: 1rem; z-index: 100; background: #a1d494; color: #0a3909; padding: 0.75rem 1.5rem; font-weight: 700; font-size: 14px; border-radius: 0.25rem; text-decoration: none; transition: top 0.2s ease; }
   .skip-link:focus { top: 1rem; }
+
+  /* Banner palette bridge */
+  .banner-wrap {
+    position: relative;
+    background: linear-gradient(135deg, rgba(92,29,36,0.08), rgba(194,148,56,0.05), rgba(143,163,153,0.06));
+    padding: 3px;
+  }
+  .banner-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg, rgba(92,29,36,0.35), rgba(194,148,56,0.15), rgba(143,163,153,0.2), transparent 65%);
+    border-radius: inherit;
+    z-index: -1;
+  }
+  .banner-img {
+    transition: filter 0.6s ease, transform 0.6s ease;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .banner-img:hover {
+    filter: drop-shadow(0 0 20px rgba(229,184,66,0.12)) drop-shadow(0 0 40px rgba(92,29,36,0.08));
+    transform: scale(1.003);
+  }
 </style>
 </head>
 <body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary">
@@ -174,6 +199,21 @@
 </div>
 </div>
 </section>
+
+<!-- Welcome Home Banner -->
+<section aria-label="Welcome Home" class="w-full px-margin-mobile md:px-margin-desktop py-block-gap-sm max-w-[1440px] mx-auto" style="background: radial-gradient(ellipse at 50% 0%, rgba(92,29,36,0.06) 0%, transparent 60%);">
+  <div class="reveal" data-delay="100">
+    <div class="banner-wrap">
+      <img alt="Welcome Home — DwellPraise" class="banner-img" loading="lazy" src="assets/Banner.png"/>
+    </div>
+    <div class="flex items-center justify-center gap-4 mt-6">
+      <span class="w-12 md:w-16 h-px opacity-30" style="background:#C29438;"></span>
+      <span class="font-body-md text-body-md text-on-surface-variant italic tracking-wide" style="color:#8FA399;">Welcome Home</span>
+      <span class="w-12 md:w-16 h-px opacity-30" style="background:#8FA399;"></span>
+    </div>
+  </div>
+</section>
+
 <!-- Social Hub Bento Grid -->
 <section aria-label="Social media feeds" class="px-margin-mobile md:px-margin-desktop py-block-gap-lg max-w-[1440px] mx-auto">
 <div class="flex justify-between items-end mb-12 border-b border-outline-variant/20 pb-4 section-divider reveal">
