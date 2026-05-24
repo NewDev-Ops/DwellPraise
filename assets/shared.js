@@ -3,6 +3,23 @@ document.addEventListener('DOMContentLoaded', function () {
   // ========== Page Load Entrance ==========
   document.body.classList.add('page-enter');
 
+  // ========== Scroll Progress Bar ==========
+  var progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.prepend(progressBar);
+  var progressTicking = false;
+  window.addEventListener('scroll', function () {
+    if (!progressTicking) {
+      requestAnimationFrame(function () {
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+        progressTicking = false;
+      });
+      progressTicking = true;
+    }
+  }, { passive: true });
+
   // ========== Dynamic Copyright Year ==========
   var yearEls = document.querySelectorAll('.copyright-year');
   var currentYear = new Date().getFullYear().toString();
@@ -162,6 +179,78 @@ document.addEventListener('DOMContentLoaded', function () {
     revealElements.forEach(function (el) { observer.observe(el); });
   } else {
     revealElements.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  // ========== Stagger Children Observer ==========
+  var staggerElements = document.querySelectorAll('.stagger-children');
+  if (staggerElements.length > 0 && 'IntersectionObserver' in window) {
+    var staggerObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            staggerObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+    );
+    staggerElements.forEach(function (el) { staggerObserver.observe(el); });
+  }
+
+  // ========== Split Reveal Observer ==========
+  var splitElements = document.querySelectorAll('.split-reveal');
+  if (splitElements.length > 0 && 'IntersectionObserver' in window) {
+    var splitObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            splitObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    splitElements.forEach(function (el) { splitObserver.observe(el); });
+  }
+
+  // ========== Content Fade Observer ==========
+  var fadeElements = document.querySelectorAll('.content-fade');
+  if (fadeElements.length > 0 && 'IntersectionObserver' in window) {
+    var fadeObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    fadeElements.forEach(function (el) { fadeObserver.observe(el); });
+  }
+
+  // ========== Image Parallax on Scroll ==========
+  var imgParallaxElements = document.querySelectorAll('.img-parallax img');
+  if (imgParallaxElements.length > 0) {
+    var imgParallaxTicking = false;
+    function updateImgParallax() {
+      imgParallaxElements.forEach(function (img) {
+        var rect = img.parentElement.getBoundingClientRect();
+        var offset = rect.top * 0.08;
+        img.style.transform = 'translateY(' + offset + 'px)';
+      });
+      imgParallaxTicking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!imgParallaxTicking) {
+        requestAnimationFrame(updateImgParallax);
+        imgParallaxTicking = true;
+      }
+    }, { passive: true });
+    updateImgParallax();
   }
 
   // ========== Smooth Page Transitions ==========

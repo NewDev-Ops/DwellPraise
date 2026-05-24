@@ -123,10 +123,6 @@
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 
   .hero-home {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background:
       radial-gradient(ellipse 900px 350px at 50% 0%, rgba(229,184,66,0.06) 0%, transparent 60%),
       radial-gradient(ellipse 700px 450px at 50% 0%, rgba(92,29,36,0.10) 0%, transparent 60%);
@@ -182,15 +178,15 @@
 </nav>
 <!-- Main Content -->
 <main class="flex-grow" id="main-content">
-<!-- Hero - Unified Welcome Home -->
-<section aria-label="Hero" class="hero-home px-margin-mobile md:px-margin-desktop py-block-gap-lg text-center">
-  <div class="max-w-[1000px] mx-auto flex flex-col items-center">
-    <!-- Banner - primary visual, first interaction -->
-    <div class="w-full max-w-5xl reveal" data-delay="50">
-      <img alt="Welcome Home — DwellPraise" class="banner-glow" loading="eager" src="assets/Banner.png"/>
-    </div>
-    <!-- Headline and verse flow from the banner -->
-    <div class="flex flex-col items-center mt-8 md:mt-12">
+<!-- Hero - Full-width Banner Welcome -->
+<section aria-label="Hero" class="hero-home">
+  <!-- Full-width banner spanning edge to edge -->
+  <div class="w-full banner-fade">
+    <img alt="Welcome Home — DwellPraise" class="banner-glow" loading="eager" src="assets/Banner.png"/>
+  </div>
+  <!-- Headline and verse flow from the banner -->
+  <div class="px-margin-mobile md:px-margin-desktop py-block-gap-lg text-center">
+    <div class="max-w-[1000px] mx-auto flex flex-col items-center">
       <h1 class="hero-headline font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface uppercase leading-none">
         <span>One Gospel</span>
         <span>Many Platforms</span>
@@ -206,12 +202,12 @@
 <!-- Social Hub Bento Grid -->
 <section aria-label="Social media feeds" class="px-margin-mobile md:px-margin-desktop py-block-gap-lg max-w-[1440px] mx-auto">
 <div class="flex justify-between items-end mb-12 border-b border-outline-variant/20 pb-4 section-divider reveal">
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase">Social Hub</h2>
-<a class="font-label-bold text-label-bold text-secondary uppercase hover:text-secondary-fixed flex items-center gap-2 view-all-arrow" href="media.html">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase">Social <span class="gradient-text">Hub</span></h2>
+<a class="font-label-bold text-label-bold text-secondary uppercase hover:text-secondary-fixed flex items-center gap-2 view-all-arrow draw-underline" href="media.html">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[300px]">
 <!-- YouTube Card -->
-<a id="youtube-latest" aria-label="Latest YouTube video" href="https://m.youtube.com/@dwellpraise" rel="noopener noreferrer" target="_blank" class="md:col-span-8 row-span-2 relative group overflow-hidden border border-outline-variant/20 bg-surface-container card-image-zoom reveal block" data-delay="100">
+<a id="youtube-latest" aria-label="Latest YouTube video" href="https://m.youtube.com/@dwellpraise" rel="noopener noreferrer" target="_blank" class="md:col-span-8 row-span-2 relative group overflow-hidden border border-outline-variant/20 bg-surface-container card-image-zoom card-glow reveal block" data-delay="100">
 <img alt="Featured video thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700 grayscale" height="600" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtlSheWSrVLx91J_y5kjQn9toXAQ0JAb66h5BlcJnbFJMICnyOONrDLV6BKtOyAsXcmilVNb7-ptZHQv8uNmzYEJkj25CjT-PWNJffyUxpdNFt-OVTyzREzgZX2Gn6Ovwgn4PwCCkuc_qLOolcnuaQXyrcZdOtoEYlm7vZdhlYWN0CUyPi133FQ94Up95atAcpL1ZsF_j4CDZINFI1XyX8QLmg7S2SdQesckj87xKkBAAQjp5Fviaax0eL85qYRpxI7v9VWJx3FA" width="800"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
 <div class="absolute bottom-0 left-0 p-8">
@@ -221,7 +217,7 @@
 </div>
 </a>
 <!-- Threads Card -->
-<a aria-label="Latest Threads post" href="https://www.threads.net/@dwellpraise" rel="noopener noreferrer" target="_blank" class="md:col-span-4 row-span-1 border border-outline-variant/20 bg-surface-container-high p-6 flex flex-col justify-between hover:bg-surface-bright transition-colors duration-300 card-lift reveal" data-delay="200">
+<a aria-label="Latest Threads post" href="https://www.threads.net/@dwellpraise" rel="noopener noreferrer" target="_blank" class="md:col-span-4 row-span-1 card-glow bg-surface-container-high p-6 flex flex-col justify-between hover:bg-surface-bright transition-colors duration-300 card-lift reveal" data-delay="200">
 <div class="flex items-center gap-3 text-tertiary">
 <span class="material-symbols-outlined">forum</span>
 <span class="font-label-bold text-caption uppercase">Threads</span>
@@ -232,7 +228,7 @@
 </div>
 </a>
 <!-- Instagram Card -->
-<a aria-label="Latest Instagram post" href="https://www.instagram.com/dwellpraise" rel="noopener noreferrer" target="_blank" class="md:col-span-4 row-span-1 border border-outline-variant/20 bg-surface-container-high p-6 flex flex-col justify-between hover:bg-surface-bright transition-colors duration-300 card-lift reveal overflow-hidden" data-delay="300">
+<a aria-label="Latest Instagram post" href="https://www.instagram.com/dwellpraise" rel="noopener noreferrer" target="_blank" class="md:col-span-4 row-span-1 card-glow bg-surface-container-high p-6 flex flex-col justify-between hover:bg-surface-bright transition-colors duration-300 card-lift reveal overflow-hidden" data-delay="300">
 <div class="flex items-center gap-3 text-secondary">
 <span class="material-symbols-outlined">photo_camera</span>
 <span class="font-label-bold text-caption uppercase">Instagram</span>
@@ -244,7 +240,7 @@
 </div>
 </section>
 <!-- Magazine Block -->
-<section aria-label="Scripture quote" class="bg-secondary text-on-secondary py-block-gap-lg px-margin-mobile md:px-margin-desktop text-center">
+<section aria-label="Scripture quote" class="bg-secondary text-on-secondary py-block-gap-lg px-margin-mobile md:px-margin-desktop text-center shimmer-bar">
 <div class="max-w-4xl mx-auto reveal">
 <span aria-hidden="true" class="material-symbols-outlined text-4xl mb-6 block mx-auto pulse-icon">format_quote</span>
 <blockquote class="font-headline-md text-headline-md leading-tight mb-8">And they went out and preached everywhere, the Lord working with them and confirming the word through the accompanying signs. Amen.</blockquote>
