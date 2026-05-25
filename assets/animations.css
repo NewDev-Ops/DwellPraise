@@ -800,3 +800,49 @@ sup.tm, .tm {
   object-fit: cover;
   will-change: transform;
 }
+
+/* ========== Page Loading Screen ========== */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #121414;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.page-loader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loader-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+}
+.loader-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  animation: loader-float 1.8s ease-in-out infinite;
+}
+.loader-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(161, 212, 148, 0.1);
+  border-top-color: #a1d494;
+  animation: loader-spin 0.9s linear infinite;
+}
+@keyframes loader-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.03); }
+}
+@keyframes loader-spin {
+  to { transform: rotate(360deg); }
+}

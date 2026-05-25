@@ -395,3 +395,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
+// ========== Loading Screen ==========
+(function() {
+  var loader = document.getElementById('loader');
+  if (loader) {
+    window.addEventListener('load', function() {
+      loader.classList.add('loaded');
+      setTimeout(function() { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 600);
+    });
+    setTimeout(function() {
+      if (loader && !loader.classList.contains('loaded')) {
+        loader.classList.add('loaded');
+        setTimeout(function() { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 600);
+      }
+    }, 5000);
+  }
+})();
