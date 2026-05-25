@@ -810,7 +810,7 @@ sup.tm, .tm {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition: opacity 0.6s var(--ease-out-expo), visibility 0.6s ease;
 }
 .page-loader.loaded {
   opacity: 0;
@@ -829,20 +829,47 @@ sup.tm, .tm {
   width: 56px;
   height: 56px;
   object-fit: contain;
-  animation: loader-float 1.8s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+  animation: loader-breathe 2.4s ease-in-out infinite;
+  transition: transform 0.45s var(--ease-out-expo), opacity 0.45s ease;
+  filter: drop-shadow(0 0 16px rgba(161, 212, 148, 0.12));
+}
+.page-loader.loaded .loader-logo {
+  transform: scale(0.75);
+  opacity: 0;
 }
 .loader-ring {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 2px solid rgba(161, 212, 148, 0.1);
-  border-top-color: #a1d494;
-  animation: loader-spin 0.9s linear infinite;
+  z-index: 1;
+  background: conic-gradient(from 0deg, transparent 0%, rgba(161, 212, 148, 0.25) 25%, #a1d494 45%, rgba(161, 212, 148, 0.25) 65%, transparent 80%, transparent 100%);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2.5px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2.5px));
+  animation: loader-spin 1.5s cubic-bezier(0.45, 0, 0.15, 1) infinite;
+  transition: opacity 0.45s ease, transform 0.5s var(--ease-out-expo);
 }
-@keyframes loader-float {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-4px) scale(1.03); }
+.page-loader.loaded .loader-ring {
+  opacity: 0;
+  transform: scale(1.35);
+}
+.loader-glow {
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  z-index: 0;
+  background: radial-gradient(circle, rgba(161, 212, 148, 0.05) 0%, transparent 60%);
+  animation: loader-pulse 2.4s ease-in-out infinite;
+}
+@keyframes loader-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.06); opacity: 1; }
 }
 @keyframes loader-spin {
   to { transform: rotate(360deg); }
+}
+@keyframes loader-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.12); opacity: 1; }
 }
