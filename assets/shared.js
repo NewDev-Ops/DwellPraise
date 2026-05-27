@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.add('page-exit');
         setTimeout(function () {
           window.location.href = target;
-        }, 300);
+        }, 500);
       });
     }
   });
@@ -394,21 +394,79 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // ========== Smooth Anchor Scroll ==========
+  document.addEventListener('click', function (e) {
+    var anchor = e.target.closest('a[href^="#"]');
+    if (anchor) {
+      var targetId = anchor.getAttribute('href');
+      if (targetId && targetId.length > 1) {
+        var targetEl = document.getElementById(targetId.substring(1));
+        if (targetEl) {
+          e.preventDefault();
+          var navEl = document.querySelector('nav');
+          var navHeight = navEl ? navEl.offsetHeight : 0;
+          var offset = targetEl.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+          window.scrollTo({ top: offset, behavior: 'smooth' });
+        }
+      }
+    }
+  });
+
+  // ========== Section-in Observer ==========
+  var sectionInElements = document.querySelectorAll('.section-in');
+  if (sectionInElements.length > 0 && 'IntersectionObserver' in window) {
+    var sectionInObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            sectionInObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+    );
+    sectionInElements.forEach(function (el) { sectionInObserver.observe(el); });
+  } else {
+    sectionInElements.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  // ========== Mobile Menu Curtain ==========
+  var curtain = document.querySelector('.mobile-curtain');
+  if (curtain && menuBtn && mobileNav && typeof openMenu === 'function' && typeof closeMenu === 'function') {
+    var origOpen = openMenu;
+    var origClose = closeMenu;
+    openMenu = function() {
+      origOpen();
+      curtain.classList.add('open');
+    };
+    closeMenu = function() {
+      origClose();
+      curtain.classList.remove('open');
+    };
+    curtain.addEventListener('click', function() {
+      closeMenu();
+    });
+  }
 });
 
 // ========== Loading Screen ==========
 (function() {
   var loader = document.getElementById('loader');
-  if (loader) {
-    window.addEventListener('load', function() {
-      loader.classList.add('loaded');
-      setTimeout(function() { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 600);
-    });
-    setTimeout(function() {
-      if (loader && !loader.classList.contains('loaded')) {
-        loader.classList.add('loaded');
-        setTimeout(function() { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 600);
-      }
-    }, 5000);
+  if (!loader) return;
+  var dismissed = false;
+  function dismiss() {
+    if (dismissed) return;
+    dismissed = true;
+    loader.classList.add('loaded');
+    setTimeout(function() { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 600);
   }
+  // Dismiss on DOMContentLoaded + 800ms minimum (page structure is ready)
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(dismiss, 800);
+  });
+  // Force dismiss by 2s max — never let the loader linger
+  setTimeout(dismiss, 2000);
+  // Also dismiss on window.load as safety net
+  window.addEventListener('load', dismiss);
 })();

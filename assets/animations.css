@@ -24,8 +24,8 @@
   to   { opacity: 0; transform: translateY(-10px); }
 }
 
-.page-enter  { animation: pageFadeIn 0.6s var(--ease-out-expo) both; }
-.page-exit   { animation: pageFadeOut 0.3s var(--ease-in-out-quint) both; }
+.page-enter  { animation: pageFadeIn 0.8s var(--ease-out-expo) both; }
+.page-exit   { animation: pageFadeOut 0.5s var(--ease-in-out-quint) both; }
 
 /* ========== Scroll-triggered Reveal ========== */
 .reveal {
@@ -154,8 +154,8 @@
   will-change: transform;
 }
 .card-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3), 0 0 0 1px rgba(161, 212, 148, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.25), 0 0 0 1px rgba(161, 212, 148, 0.15);
 }
 
 /* ========== Magazine Block Pulse ========== */
@@ -271,7 +271,7 @@ input:focus, textarea:focus {
   width: 50%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(161, 212, 148, 0.15), rgba(255, 182, 140, 0.06), transparent);
-  animation: shimmer-line 4s ease-in-out infinite;
+  animation: shimmer-line 5s ease-in-out infinite;
 }
 @keyframes shimmer-line {
   0% { left: -100%; }
@@ -463,12 +463,12 @@ sup.tm, .tm {
               background 0.25s ease;
 }
 .btn-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
 }
 .btn-hover:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* ========== Link Underline Hover ========== */
@@ -742,9 +742,10 @@ sup.tm, .tm {
               box-shadow 0.4s ease;
 }
 .card-glow:hover {
-  border-color: rgba(161, 212, 148, 0.3);
-  box-shadow: 0 0 30px rgba(161, 212, 148, 0.06),
-              inset 0 1px 0 rgba(161, 212, 148, 0.1);
+  border-color: rgba(161, 212, 148, 0.35);
+  box-shadow: 0 0 40px rgba(161, 212, 148, 0.1),
+              0 0 80px rgba(161, 212, 148, 0.04),
+              inset 0 1px 0 rgba(161, 212, 148, 0.08);
 }
 
 /* ========== Banner Fade Overlay ========== */
@@ -872,4 +873,95 @@ sup.tm, .tm {
 @keyframes loader-pulse {
   0%, 100% { transform: scale(1); opacity: 0.5; }
   50% { transform: scale(1.12); opacity: 1; }
+}
+
+/* ========== Premium Typography ========== */
+.text-balance {
+  text-wrap: balance;
+}
+.heading-premium {
+  letter-spacing: -0.02em;
+}
+.subheading-premium {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ========== Section Entrance Animation ========== */
+.section-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s var(--ease-out-quart),
+              transform 0.9s var(--ease-out-quart);
+}
+.section-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== Decorative Section Divider ========== */
+.divider-glow {
+  height: 1px;
+  border: none;
+  background: linear-gradient(90deg, transparent, rgba(161, 212, 148, 0.15), rgba(255, 182, 140, 0.08), transparent);
+}
+.divider-glow-lg {
+  height: 2px;
+  width: 60px;
+  border: none;
+  background: linear-gradient(90deg, #a1d494, #ffb68c);
+  border-radius: 1px;
+}
+
+/* ========== Form Input Refinements ========== */
+.form-input {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(68, 71, 72, 0.3);
+  border-radius: 8px;
+  padding: 0.875rem 1rem;
+  color: #f0f0f0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9375rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  width: 100%;
+}
+.form-input:focus {
+  outline: none;
+  border-color: #a1d494;
+  box-shadow: 0 0 0 3px rgba(161, 212, 148, 0.08);
+  background: rgba(255,255,255,0.06);
+}
+.form-input::placeholder {
+  color: rgba(196, 199, 199, 0.35);
+}
+
+/* ========== Mobile Menu Curtain ========== */
+.mobile-curtain {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 20, 20, 0.6);
+  z-index: 47;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0s 0.35s;
+}
+.mobile-curtain.open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s ease, visibility 0s 0s;
+}
+
+/* ========== Image Frame ========== */
+.img-frame {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.img-frame-lg {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* ========== Hero Text Shadow for Readability ========== */
+.hero-text-shadow {
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
