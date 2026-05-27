@@ -147,17 +147,6 @@
   transform: translateX(100%) skewX(-15deg);
 }
 
-/* ========== Card Lift ========== */
-.card-lift {
-  transition: transform 0.4s var(--ease-out-expo),
-              box-shadow 0.4s var(--ease-out-expo);
-  will-change: transform;
-}
-.card-lift:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.25), 0 0 0 1px rgba(161, 212, 148, 0.15);
-}
-
 /* ========== Magazine Block Pulse ========== */
 .pulse-icon {
   animation: pulse 3s ease-in-out infinite;
@@ -369,18 +358,6 @@ input:focus, textarea:focus {
   transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-/* ========== Smooth Scroll ========== */
-html {
-  scroll-behavior: smooth;
-}
-
-/* ========== Focus Visible ========== */
-*:focus-visible {
-  outline: 2px solid #a1d494;
-  outline-offset: 2px;
-  border-radius: 2px;
-}
-
 /* ========== Selection ========== */
 ::selection {
   background: #a1d494;
@@ -433,16 +410,6 @@ html {
   }
   h1, h2, h3, h4 {
     page-break-after: avoid;
-  }
-}
-
-/* ========== Reduced Motion ========== */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }
 
@@ -734,20 +701,6 @@ sup.tm, .tm {
   width: 100%;
 }
 
-/* ========== Card Glow Border ========== */
-.card-glow {
-  position: relative;
-  border: 1px solid rgba(68, 71, 72, 0.2);
-  transition: border-color 0.4s ease,
-              box-shadow 0.4s ease;
-}
-.card-glow:hover {
-  border-color: rgba(161, 212, 148, 0.35);
-  box-shadow: 0 0 40px rgba(161, 212, 148, 0.1),
-              0 0 80px rgba(161, 212, 148, 0.04),
-              inset 0 1px 0 rgba(161, 212, 148, 0.08);
-}
-
 /* ========== Banner Fade Overlay ========== */
 .banner-fade {
   position: relative;
@@ -887,18 +840,6 @@ sup.tm, .tm {
   text-transform: uppercase;
 }
 
-/* ========== Section Entrance Animation ========== */
-.section-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.9s var(--ease-out-quart),
-              transform 0.9s var(--ease-out-quart);
-}
-.section-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* ========== Decorative Section Divider ========== */
 .divider-glow {
   height: 1px;
@@ -1022,19 +963,23 @@ select:focus-visible {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ========== Card-Lift Enhancement ========== */
+/* ========== Card Lift ========== */
 .card-lift {
+  position: relative;
   transition: transform 0.5s var(--ease-out-expo),
               box-shadow 0.5s var(--ease-out-expo);
   will-change: transform;
 }
 .card-lift:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3),
+              0 0 0 1px rgba(161, 212, 148, 0.08);
 }
 
-/* ========== Card Glow enhancement ========== */
+/* ========== Card Glow ========== */
 .card-glow {
+  position: relative;
+  border: 1px solid rgba(68, 71, 72, 0.2);
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 .card-glow:hover {
@@ -1055,10 +1000,16 @@ select:focus-visible {
   will-change: transform, opacity;
 }
 
-/* ========== Section-in enhancement ========== */
+/* ========== Section Entrance Animation ========== */
 .section-in {
+  opacity: 0;
+  transform: translateY(40px);
   transition: opacity 0.9s var(--ease-out-expo),
               transform 0.9s var(--ease-out-expo);
+}
+.section-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ========== Highlight Card (Feature/Spotlight) ========== */

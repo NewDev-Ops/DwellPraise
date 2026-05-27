@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
   navItems.forEach(function (link) {
     var linkPage = link.getAttribute('href');
     if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
-      link.classList.add('text-primary', 'border-b-2', 'border-primary', 'pb-1');
+      link.classList.add('text-secondary', 'border-b-2', 'border-secondary', 'pb-1');
       link.classList.remove('text-on-surface-variant', 'nav-link');
     }
   });
