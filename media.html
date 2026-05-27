@@ -138,7 +138,7 @@
   .hero-gradient-media { background: radial-gradient(circle at 50% 0%, rgba(161, 212, 148, 0.12) 0%, rgba(18, 20, 20, 1) 70%); }
 </style>
 </head>
-<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary">
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary page-noise">
 <div id="loader" class="page-loader" role="status" aria-label="Loading">
   <div class="loader-content">
     <div class="loader-glow"></div>
@@ -192,14 +192,14 @@
 <!-- Hero Section -->
 <section aria-label="Media Hub hero" class="hero-gradient-media w-full min-h-[60vh] flex flex-col justify-center px-margin-mobile md:px-margin-desktop py-16 border-b border-outline-variant/20 relative overflow-hidden">
 <div aria-hidden="true" class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
-<div class="relative z-10 max-w-4xl">
-<span class="inline-block bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-4 py-2 mb-8 reveal" data-delay="100">Digital Ministry</span>
-<h1 class="hero-headline font-headline-xl text-headline-xl md:text-[120px] text-on-surface uppercase mb-8 leading-none heading-premium text-balance">
-<span class="gradient-text">The Media</span>
-<span>Hub.</span>
-</h1>
-<p class="hero-subtitle font-body-lg text-body-lg text-on-surface-variant max-w-2xl border-l-2 border-secondary pl-6 py-2">Explore our collection of sermons, worship sessions, and community stories. Structured minimal approach to spiritual content delivery.</p>
-</div>
+  <div class="relative z-10 max-w-4xl hero-stagger">
+    <span class="inline-block bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-4 py-2 mb-8">Digital Ministry</span>
+    <h1 class="hero-headline font-headline-xl text-headline-xl md:text-[120px] text-on-surface uppercase mb-8 leading-none heading-premium text-balance">
+      <span class="gradient-text">The Media</span>
+      <span>Hub.</span>
+    </h1>
+    <p class="hero-subtitle font-body-lg text-body-lg text-on-surface-variant max-w-2xl border-l-2 border-secondary pl-6 py-2">Explore our collection of sermons, worship sessions, and community stories. Structured minimal approach to spiritual content delivery.</p>
+  </div>
 </section>
 <hr class="divider-glow" />
 <section aria-label="Content platforms" class="section-in px-margin-mobile md:px-margin-desktop py-block-gap-lg max-w-[1440px] mx-auto">

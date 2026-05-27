@@ -170,7 +170,7 @@
   /* Generosity page uses green/orange from site defaults */
 </style>
 </head>
-<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary">
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary page-noise">
 <div id="loader" class="page-loader" role="status" aria-label="Loading">
   <div class="loader-content">
     <div class="loader-glow"></div>
@@ -367,26 +367,38 @@
 <h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface uppercase">Impact & Goals</h2>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-5xl mx-auto mb-16">
-<!-- Goal 1: Sustainable Giving -->
-<div class="bg-surface-container border border-outline-variant/20 p-10 text-center card-lift reveal card-glow" data-delay="100">
-<div class="mb-6">
-<span class="material-symbols-outlined text-secondary text-5xl mb-4 block mx-auto" style="font-variation-settings: 'FILL' 1;">autorenew</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-5xl mx-auto mb-16 items-stretch">
+<!-- Stat 1: Ministries Helped -->
+<div class="bg-surface-container border border-outline-variant/20 p-10 text-center card-lift reveal card-glow flex flex-col justify-center" data-delay="100">
+<div>
+<span class="material-symbols-outlined text-secondary text-5xl mb-4 block mx-auto" style="font-variation-settings: 'FILL' 1;">groups</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-4">Sustainable Giving</h3>
-<div class="w-16 h-px bg-secondary/30 mx-auto mb-4"></div>
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-sm mx-auto">We want to be able to give today, and tomorrow and onwards without having to think about it.</p>
+<div class="font-headline-xl text-headline-lg-mobile md:text-headline-lg text-secondary uppercase leading-none mb-4">4</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-3">Ministries Helped</h3>
+<div class="w-12 h-px" style="background: rgba(31, 110, 178, 0.3);"></div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed max-w-sm mx-auto mt-4">Churches and ministries supported through tithe and generosity distributions.</p>
 </div>
 
-<!-- Goal 2: Total Generosity -->
-<div class="bg-surface-container border border-outline-variant/20 p-10 text-center card-lift reveal card-glow" data-delay="200">
-<div class="mb-6">
-<span class="material-symbols-outlined text-secondary text-5xl mb-4 block mx-auto" style="font-variation-settings: 'FILL' 1;">savings</span>
+<!-- Stat 2: Total Generosity (Highlight) -->
+<div class="bg-surface-container p-10 md:p-12 text-center card-lift reveal card-highlight flex flex-col justify-center" data-delay="200">
+<div>
+<span class="material-symbols-outlined text-5xl mb-4 block mx-auto" style="font-variation-settings: 'FILL' 1; color: #1F6EB2;">savings</span>
 </div>
-<div class="font-headline-xl text-headline-lg-mobile md:text-headline-lg text-tertiary uppercase leading-none mb-4">KES 30,000+</div>
+<div class="font-headline-xl text-headline-lg-mobile md:text-headline-lg gradient-text uppercase leading-none mb-4">KES 30,000+</div>
 <h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-3">Total Generosity &amp; Investments</h3>
-<div class="w-16 h-px bg-secondary/30 mx-auto mb-4"></div>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed max-w-sm mx-auto">And growing. Every contribution fuels the next wave of kingdom impact.</p>
+<hr class="divider-glow-lg mx-auto" />
+<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed max-w-sm mx-auto mt-4">And growing. Every contribution fuels the next wave of kingdom impact.</p>
+</div>
+
+<!-- Stat 3: Business Visions Enabled -->
+<div class="bg-surface-container border border-outline-variant/20 p-10 text-center card-lift reveal card-glow flex flex-col justify-center" data-delay="300">
+<div>
+<span class="material-symbols-outlined text-secondary text-5xl mb-4 block mx-auto" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<div class="font-headline-xl text-headline-lg-mobile md:text-headline-lg text-tertiary uppercase leading-none mb-4">2</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-3">Business Visions Enabled</h3>
+<div class="w-12 h-px" style="background: rgba(255, 182, 140, 0.3);"></div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed max-w-sm mx-auto mt-4">Kingdom businesses and creative enterprises launched through enablement funding.</p>
 </div>
 </div>
 

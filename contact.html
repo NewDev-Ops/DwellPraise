@@ -142,7 +142,7 @@
   @keyframes spin { to { transform: rotate(360deg); } }
 </style>
 </head>
-<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary">
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary page-noise">
 <div id="loader" class="page-loader" role="status" aria-label="Loading">
   <div class="loader-content">
     <div class="loader-glow"></div>
@@ -303,7 +303,8 @@
 </div>
 </main>
 <!-- Privacy & Terms -->
-<section class="px-margin-mobile md:px-margin-desktop py-block-gap-lg max-w-[1440px] mx-auto">
+<hr class="divider-glow" />
+<section class="section-in px-margin-mobile md:px-margin-desktop py-block-gap-lg max-w-[1440px] mx-auto">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
 <div id="privacy" class="bg-surface-container p-8 border border-outline-variant/20 card-lift reveal card-glow" data-delay="100">
 <h2 class="font-headline-md text-headline-md text-primary uppercase mb-4">Privacy Policy</h2>
