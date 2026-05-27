@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /assets/
+Disallow: /*.json$
 
 Sitemap: https://dwellpraise.gt.tc/sitemap.xml
+
+# Crawl delay for polite crawling
+Crawl-Delay: 10
