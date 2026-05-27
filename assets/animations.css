@@ -1,9 +1,14 @@
-/* ========== Easing Variables ========== */
+/* ========== Design Tokens ========== */
 :root {
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
 }
 
 /* ========== Page Load Entrance ========== */
@@ -126,6 +131,7 @@
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  border-radius: var(--radius-sm);
 }
 .btn-shimmer::before {
   content: '';
@@ -179,6 +185,7 @@
   opacity: 0;
   transform: translateY(-10px);
   visibility: hidden;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   transition: max-height 0.45s var(--ease-out-expo),
               opacity 0.35s ease-out,
               transform 0.35s ease-out,
@@ -209,6 +216,7 @@
 .mobile-nav.open .mobile-nav-link:nth-child(2) { transition-delay: 0.14s; }
 .mobile-nav.open .mobile-nav-link:nth-child(3) { transition-delay: 0.2s; }
 .mobile-nav.open .mobile-nav-link:nth-child(4) { transition-delay: 0.26s; }
+.mobile-nav.open .mobile-nav-link:nth-child(5) { transition-delay: 0.32s; }
 
 /* Hamburger icon rotation */
 .menu-btn-icon {
@@ -425,6 +433,7 @@ sup.tm, .tm {
 /* ========== Button Hover Enhancements ========== */
 .btn-hover {
   position: relative;
+  border-radius: var(--radius-sm);
   transition: transform 0.3s var(--ease-out-expo),
               box-shadow 0.3s var(--ease-out-expo),
               background 0.25s ease;
@@ -565,7 +574,7 @@ sup.tm, .tm {
   font-size: 12px;
   font-weight: 500;
   padding: 4px 8px;
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
@@ -589,7 +598,7 @@ sup.tm, .tm {
   background: linear-gradient(90deg, #333535 25%, #444748 50%, #333535 75%);
   background-size: 200% 100%;
   animation: skeleton-pulse 1.5s ease-in-out infinite;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
 }
 
 /* ========== Scroll Progress Bar ========== */
@@ -676,6 +685,7 @@ sup.tm, .tm {
 
 /* ========== Hover Lift ========== */
 .hover-lift {
+  border-radius: var(--radius-md);
   transition: transform 0.4s var(--ease-out-expo),
               box-shadow 0.4s var(--ease-out-expo);
 }
@@ -858,7 +868,7 @@ sup.tm, .tm {
 .form-input {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(68, 71, 72, 0.3);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   padding: 0.875rem 1rem;
   color: #f0f0f0;
   font-family: 'DM Sans', sans-serif;
@@ -874,6 +884,12 @@ sup.tm, .tm {
 }
 .form-input::placeholder {
   color: rgba(196, 199, 199, 0.35);
+}
+
+/* ========== Contact Form Input Transitions ========== */
+.contact-form input,
+.contact-form textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 /* ========== Mobile Menu Curtain ========== */
@@ -894,11 +910,11 @@ sup.tm, .tm {
 
 /* ========== Image Frame ========== */
 .img-frame {
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   overflow: hidden;
 }
 .img-frame-lg {
-  border-radius: 14px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
@@ -914,6 +930,15 @@ html {
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .page-loader { display: none !important; }
 }
 
 /* ========== Global Focus-Visible Ring ========== */
@@ -959,6 +984,12 @@ select:focus-visible {
 .hero-stagger > *:nth-child(5) { animation-delay: 0.6s; }
 .hero-stagger > *:nth-child(6) { animation-delay: 0.75s; }
 
+/* Hero-stagger children with gentle-float: entrance first, then float */
+.hero-stagger .gentle-float {
+  animation: heroStaggerFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+             gentle-float 6s ease-in-out 1.2s infinite;
+}
+
 @keyframes heroStaggerFade {
   to { opacity: 1; transform: translateY(0); }
 }
@@ -966,8 +997,10 @@ select:focus-visible {
 /* ========== Card Lift ========== */
 .card-lift {
   position: relative;
+  border-radius: var(--radius-md);
   transition: transform 0.5s var(--ease-out-expo),
-              box-shadow 0.5s var(--ease-out-expo);
+              box-shadow 0.5s var(--ease-out-expo),
+              border-color 0.5s ease;
   will-change: transform;
 }
 .card-lift:hover {
@@ -980,7 +1013,28 @@ select:focus-visible {
 .card-glow {
   position: relative;
   border: 1px solid rgba(68, 71, 72, 0.2);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  border-radius: var(--radius-md);
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+.card-glow:hover {
+  border-color: rgba(161, 212, 148, 0.18);
+  box-shadow: 0 0 0 1px rgba(161, 212, 148, 0.04), 0 8px 32px rgba(0,0,0,0.2);
+}
+.card-glow-error:hover {
+  border-color: rgba(255, 180, 171, 0.18);
+  box-shadow: 0 0 0 1px rgba(255, 180, 171, 0.04), 0 8px 32px rgba(0,0,0,0.2);
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3),
+              0 0 0 1px rgba(161, 212, 148, 0.08);
+}
+
+/* ========== Card Glow ========== */
+.card-glow {
+  position: relative;
+  border: 1px solid rgba(68, 71, 72, 0.2);
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
 }
 .card-glow:hover {
   border-color: rgba(161, 212, 148, 0.18);
@@ -1003,9 +1057,9 @@ select:focus-visible {
 /* ========== Section Entrance Animation ========== */
 .section-in {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.9s var(--ease-out-expo),
-              transform 0.9s var(--ease-out-expo);
+  transform: translateY(35px);
+  transition: opacity 0.8s var(--ease-out-quart),
+              transform 0.8s var(--ease-out-quart);
 }
 .section-in.visible {
   opacity: 1;
@@ -1016,6 +1070,7 @@ select:focus-visible {
 .card-highlight {
   position: relative;
   border: 1.5px solid transparent;
+  border-radius: var(--radius-md);
   background-clip: padding-box;
   background-color: inherit;
 }

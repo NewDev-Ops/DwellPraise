@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ========== Active Nav Highlight ==========
   var currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  var navItems = document.querySelectorAll('nav a[href]');
+  var navItems = document.querySelectorAll('[role="menubar"] a[href], .mobile-nav a[href]');
   navItems.forEach(function (link) {
     var linkPage = link.getAttribute('href');
     if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
