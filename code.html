@@ -5,9 +5,11 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="DwellPraise - Nevertheless the Gospel Shall be Preached. A digital ministry exploring modern reverence and architectural stability through structured minimalism." name="description"/>
 <meta content="DwellPraise, gospel, ministry, digital ministry, nevertheless the gospel, christian, faith" name="keywords"/>
-<meta content="DwellPraise" name="author"/>
-<meta content="DwellPraise is a trademark of DwellPraise Ministries. All rights reserved." name="copyright"/>
+<meta content="DwellPraise™" name="author"/>
+<meta content="DwellPraise™ is a trademark of DwellPraise Ministries. All rights reserved." name="copyright"/>
 <meta content="index, follow" name="robots"/>
+<meta content="1 day" http-equiv="expires"/>
+<meta content="1 day" name="revisit-after"/>
 <link href="https://dwellpraise.gt.tc/code.html" rel="canonical"/>
 <meta content="DwellPraise - Nevertheless the Gospel" property="og:title"/>
 <meta content="A digital ministry exploring modern reverence and architectural stability through structured minimalism." property="og:description"/>
@@ -15,6 +17,7 @@
 <meta content="https://dwellpraise.gt.tc/code.html" property="og:url"/>
 <meta content="https://dwellpraise.gt.tc/assets/Dark%20Coloured.png" property="og:image"/>
 <meta content="#121414" name="theme-color"/>
+<meta content="#121414" name="msapplication-TileColor"/>
 <meta content="en_US" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@dwellpraise" name="twitter:site"/>
@@ -23,174 +26,20 @@
 <meta content="A digital ministry exploring modern reverence and architectural stability through structured minimalism." name="twitter:description"/>
 <meta content="https://dwellpraise.gt.tc/assets/Dark%20Coloured.png" name="twitter:image"/>
 <title>DwellPraise - Nevertheless the Gospel Shall be Preached</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Syne:wght@700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "surface-tint": "#c8c6c5",
-                      "background": "#121414",
-                      "on-tertiary": "#522300",
-                      "error": "#ffb4ab",
-                      "on-tertiary-container": "#b86937",
-                      "on-error": "#690005",
-                      "surface-container": "#1e2020",
-                      "surface-variant": "#333535",
-                      "surface-container-high": "#282a2b",
-                      "surface-bright": "#38393a",
-                      "tertiary-fixed-dim": "#ffb68c",
-                      "secondary-fixed-dim": "#a1d494",
-                      "on-error-container": "#ffdad6",
-                      "tertiary-container": "#240b00",
-                      "surface": "#121414",
-                      "primary-fixed-dim": "#c8c6c5",
-                      "surface-container-lowest": "#0c0f0f",
-                      "on-primary-container": "#7e7d7d",
-                      "on-secondary-fixed": "#002201",
-                      "inverse-primary": "#5f5e5e",
-                      "secondary-fixed": "#bcf0ae",
-                      "on-primary-fixed-variant": "#474646",
-                      "surface-dim": "#121414",
-                      "outline": "#8e9192",
-                      "inverse-on-surface": "#2f3131",
-                      "tertiary-fixed": "#ffdbc9",
-                      "inverse-surface": "#e2e2e2",
-                      "surface-container-highest": "#333535",
-                      "on-secondary": "#0a3909",
-                      "on-primary-fixed": "#1c1b1b",
-                      "surface-container-low": "#1a1c1c",
-                      "on-tertiary-fixed": "#321200",
-                      "outline-variant": "#444748",
-                      "on-secondary-container": "#90c283",
-                      "secondary-container": "#23501e",
-                      "primary": "#c8c6c5",
-                      "on-tertiary-fixed-variant": "#743503",
-                      "primary-fixed": "#e5e2e1",
-                      "on-surface-variant": "#c4c7c7",
-                      "tertiary": "#ffb68c",
-                      "on-secondary-fixed-variant": "#23501e",
-                      "on-surface": "#e2e2e2",
-                      "on-primary": "#313030",
-                      "error-container": "#93000a",
-                      "primary-container": "#121212",
-                      "secondary": "#a1d494",
-                      "on-background": "#e2e2e2"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "gutter": "1.5rem",
-                      "block-gap-lg": "6rem",
-                      "block-gap-sm": "2rem",
-                      "margin-desktop": "4rem",
-                      "margin-mobile": "1rem"
-              },
-              "fontFamily": {
-                      "body-md": [
-                              "Inter"
-                      ],
-                      "caption": [
-                              "Inter"
-                      ],
-                      "headline-xl": [
-                              "Syne"
-                      ],
-                      "headline-lg": [
-                              "Syne"
-                      ],
-                      "headline-md": [
-                              "Syne"
-                      ],
-                      "body-lg": [
-                              "Inter"
-                      ],
-                      "headline-lg-mobile": [
-                              "Syne"
-                      ],
-                      "label-bold": [
-                              "Inter"
-                      ]
-              },
-              "fontSize": {
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "caption": [
-                              "12px",
-                              {
-                                      "lineHeight": "1.4",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "headline-xl": [
-                              "80px",
-                              {
-                                      "lineHeight": "1.0",
-                                      "letterSpacing": "-0.04em",
-                                      "fontWeight": "800"
-                              }
-                      ],
-                      "headline-lg": [
-                              "48px",
-                              {
-                                      "lineHeight": "1.1",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "headline-md": [
-                              "24px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-lg-mobile": [
-                              "32px",
-                              {
-                                      "lineHeight": "1.1",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "label-bold": [
-                              "14px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "700"
-                              }
-                      ]
-              }
-            },
-          }
-        }
-    </script>
+<script src="assets/tailwind-config.js"></script>
+<link href="assets/animations.css" rel="stylesheet"/>
+<link href="assets/Dark Coloured.png" rel="icon" type="image/png"/>
+<link href="assets/Dark Coloured.png" rel="apple-touch-icon"/>
 <style>
-        .material-symbols-outlined {
-          font-variation-settings:
-          'FILL' 0,
-          'wght' 400,
-          'GRAD' 0,
-          'opsz' 24
-        }
+        .skip-link { position: absolute; top: -100%; left: 1rem; z-index: 100; background: #a1d494; color: #0a3909; padding: 0.75rem 1.5rem; font-weight: 700; font-size: 14px; border-radius: 0.25rem; text-decoration: none; transition: top 0.2s ease; }
+        .skip-link:focus { top: 1rem; }
         .hero-gradient {
             background: radial-gradient(circle at 50% 0%, rgba(161, 212, 148, 0.15) 0%, rgba(18, 20, 20, 1) 70%);
         }
@@ -225,7 +74,7 @@
 }
 </script>
 </head>
-<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col page-noise">
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary page-noise">
 <div id="loader" class="page-loader" role="status" aria-label="Loading">
   <div class="loader-content">
     <div class="loader-glow"></div>
@@ -233,60 +82,64 @@
     <div class="loader-ring"></div>
   </div>
 </div>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- TopNavBar -->
-<nav class="bg-background dark:bg-background text-primary dark:text-primary font-headline-md text-headline-md uppercase tracking-tight w-full top-0 border-b border-outline-variant/20 sticky z-50">
+<nav aria-label="Main navigation" class="bg-background w-full top-0 border-b border-outline-variant/20 sticky z-50" role="navigation">
 <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-[1440px] mx-auto">
-<div class="flex items-center gap-4">
-<img alt="DwellPraise Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvlnpWVVjbE0l7oxsJSkXN2ngtt2kLsqK27Fu7ZNskqSuU1zmR1LriIAlelJnrl0p6MMIHtIkanmA-nCSff23UcjLYusE0RsHHcG_P1G8wTGh5jSpfNjJh2q_9DhpcCweA3Fv3xhgMSWXFR9PalRwCRcbKkI13CmGaa-MCiToLqAdERUtgcNzYuDCCvaJ7rNZtV6p09Tl7Pa8tabFYXF70DAbrolJHOMleZyma47UtH6q4-RMiB1goE_EHOHz1eUApBSq-MjhcDA"/>
-<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface uppercase tracking-tight">DwellPraise</span>
+<a aria-label="DwellPraise Home" class="flex items-center gap-4 group" href="index.html">
+<img alt="DwellPraise™ Logo" class="h-10 w-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 logo-glow" height="40" src="assets/Dark Coloured.png" width="40"/>
+<span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">DwellPraise<sup class="text-[0.5em] align-top ml-0.5 opacity-70">™</sup></span>
+</a>
+<div class="hidden md:flex items-center gap-8 font-label-bold text-label-bold uppercase tracking-widest" role="menubar">
+<a class="px-4 py-2" href="index.html" role="menuitem">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="about.html" role="menuitem">About</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="media.html" role="menuitem">Media</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-4 py-2 nav-link" href="contact.html" role="menuitem">Contact</a>
 </div>
-<!-- Desktop Nav -->
-<div class="hidden md:flex items-center gap-8">
-<a class="text-primary border-b-2 border-primary pb-1 uppercase" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-2 py-1 uppercase" href="about.html">About</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-2 py-1 uppercase" href="media.html">Media</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/10 px-2 py-1 uppercase" href="contact.html">Contact</a>
+<div class="hidden md:block">
+<a href="contact.html" class="bg-secondary text-on-secondary font-label-bold text-label-bold uppercase px-8 py-4 hover:bg-secondary-fixed transition-colors inline-block btn-shimmer btn-hover ripple">Connect</a>
 </div>
-<!-- Mobile Nav Toggle (Simplified for structure) -->
-<button class="md:hidden text-on-surface">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-on-surface p-2 rounded focus-visible:outline-2 focus-visible:outline-secondary" id="mobile-menu-btn" type="button">
+<span class="material-symbols-outlined text-3xl menu-btn-icon" id="menu-icon">menu</span>
 </button>
-<!-- Trailing Action -->
-<button class="hidden md:block bg-secondary text-on-secondary px-6 py-3 font-label-bold text-label-bold uppercase tracking-wider hover:bg-secondary-fixed transition-colors active:scale-95 duration-150 rounded-none">
-                Connect
-            </button>
 </div>
+<div aria-hidden="true" class="mobile-nav md:hidden bg-surface-container border-b border-outline-variant/20 px-margin-mobile" id="mobile-nav" role="menu">
+<div class="flex flex-col gap-4 py-4">
+<a class="mobile-nav-link text-on-surface-variant hover:text-on-surface pb-2 uppercase border-b border-outline-variant/20" href="index.html" role="menuitem">Home</a>
+<a class="mobile-nav-link text-on-surface-variant hover:text-on-surface pb-2 uppercase border-b border-outline-variant/20" href="about.html" role="menuitem">About</a>
+<a class="mobile-nav-link text-on-surface-variant hover:text-on-surface pb-2 uppercase border-b border-outline-variant/20" href="media.html" role="menuitem">Media</a>
+<a class="mobile-nav-link text-on-surface-variant hover:text-on-surface pb-2 uppercase" href="contact.html" role="menuitem">Contact</a>
+</div>
+</div>
+<div class="mobile-curtain"></div>
 </nav>
 <!-- Main Content -->
-<main class="flex-grow">
+<main class="flex-grow" id="main-content">
 <!-- Hero Section -->
 <section class="hero-gradient min-h-[80vh] flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop py-block-gap-lg text-center border-b border-outline-variant/20">
-<div class="max-w-[1000px] mx-auto flex flex-col items-center gap-block-gap-sm">
-<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface uppercase leading-none">
-                    Nevertheless the Gospel <br/> Shall be Preached
-                </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">
+<div class="max-w-[1000px] mx-auto flex flex-col items-center gap-block-gap-sm hero-stagger">
+<h1 class="hero-headline font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface uppercase leading-none heading-premium text-balance">
+<span>Nevertheless the Gospel</span> <span>Shall be Preached</span>
+</h1>
+<p class="hero-subtitle font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">
                     A digital ministry exploring modern reverence and architectural stability through structured minimalism.
                 </p>
-<div class="mt-8">
-<button class="bg-tertiary text-on-tertiary px-8 py-4 font-label-bold text-label-bold uppercase tracking-wider hover:bg-tertiary-fixed transition-colors border border-tertiary rounded-none">
-                        Join the Movement
-                    </button>
+<div class="hero-cta mt-8">
+<a href="contact.html" class="inline-block bg-tertiary text-on-tertiary px-8 py-4 font-label-bold text-label-bold uppercase tracking-wider hover:bg-tertiary-fixed transition-colors border border-tertiary btn-shimmer btn-hover ripple">Join the Movement</a>
 </div>
 </div>
 </section>
+<hr class="divider-glow" />
 <!-- Social Hub (Bento Grid) -->
-<section class="px-margin-mobile md:px-margin-desktop py-block-gap-lg max-w-[1440px] mx-auto">
-<div class="flex justify-between items-end mb-12 border-b border-outline-variant/20 pb-4">
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase">Social Hub</h2>
-<a class="font-label-bold text-label-bold text-secondary uppercase hover:text-secondary-fixed flex items-center gap-2" href="media.html">
-                    View All <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
-</a>
+<section class="section-in px-margin-mobile md:px-margin-desktop py-block-gap-lg max-w-[1440px] mx-auto">
+<div class="flex justify-between items-end mb-12 border-b border-outline-variant/20 pb-4 section-divider reveal">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase">Social <span class="gradient-text">Hub</span></h2>
+<a class="font-label-bold text-label-bold text-secondary uppercase hover:text-secondary-fixed flex items-center gap-2 view-all-arrow draw-underline" href="media.html">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[300px]">
 <!-- Featured Item (Spans 8 cols) -->
-<div class="md:col-span-8 row-span-2 relative group overflow-hidden border border-outline-variant/20 bg-surface-container">
-<img alt="Featured Content" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 grayscale" data-alt="A striking digital installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant red. The mood is serene yet technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtlSheWSrVLx91J_y5kjQn9toXAQ0JAb66h5BlcJnbFJMICnyOONrDLV6BKtOyAsXcmilVNb7-ptZHQv8uNmzYEJkj25CjT-PWNJffyUxpdNFt-OVTyzREzgZX2Gn6Ovwgn4PwCCkuc_qLOolcnuaQXyrcZdOtoEYlm7vZdhlYWN0CUyPi133FQ94Up95atAcpL1ZsF_j4CDZINFI1XyX8QLmg7S2SdQesckj87xKkBAAQjp5Fviaax0eL85qYRpxI7v9VWJx3FA"/>
+<div class="md:col-span-8 row-span-2 relative group overflow-hidden border border-outline-variant/20 bg-surface-container card-image-zoom card-glow reveal" data-delay="100">
+<img alt="Featured Content" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700 grayscale" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtlSheWSrVLx91J_y5kjQn9toXAQ0JAb66h5BlcJnbFJMICnyOONrDLV6BKtOyAsXcmilVNb7-ptZHQv8uNmzYEJkj25CjT-PWNJffyUxpdNFt-OVTyzREzgZX2Gn6Ovwgn4PwCCkuc_qLOolcnuaQXyrcZdOtoEYlm7vZdhlYWN0CUyPi133FQ94Up95atAcpL1ZsF_j4CDZINFI1XyX8QLmg7S2SdQesckj87xKkBAAQjp5Fviaax0eL85qYRpxI7v9VWJx3FA"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
 <div class="absolute bottom-0 left-0 p-8">
 <span class="inline-block bg-secondary text-on-secondary px-3 py-1 font-label-bold text-caption uppercase mb-4">Latest Video</span>
@@ -295,9 +148,9 @@
 </div>
 </div>
 <!-- Secondary Item 1 (Spans 4 cols) -->
-<div class="md:col-span-4 row-span-1 border border-outline-variant/20 bg-surface-container-high p-6 flex flex-col justify-between hover:bg-surface-bright transition-colors">
+<div class="md:col-span-4 row-span-1 border border-outline-variant/20 bg-surface-container-high p-6 flex flex-col justify-between hover:bg-surface-bright transition-colors duration-300 card-lift card-glow reveal" data-delay="200">
 <div class="flex items-center gap-3 text-tertiary">
-<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="material-symbols-outlined">forum</span>
 <span class="font-label-bold text-caption uppercase">Bluesky</span>
 </div>
 <div>
@@ -306,42 +159,61 @@
 </div>
 </div>
 <!-- Secondary Item 2 (Spans 4 cols) -->
-<div class="md:col-span-4 row-span-1 border border-outline-variant/20 bg-surface-container-high p-6 flex flex-col justify-between hover:bg-surface-bright transition-colors">
+<div class="md:col-span-4 row-span-1 border border-outline-variant/20 bg-surface-container-high p-6 flex flex-col justify-between hover:bg-surface-bright transition-colors duration-300 card-lift card-glow reveal" data-delay="300">
 <div class="flex items-center gap-3 text-secondary">
-<span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span>
+<span class="material-symbols-outlined">photo_camera</span>
 <span class="font-label-bold text-caption uppercase">Instagram</span>
 </div>
 <div class="mt-4 flex-grow">
-<img alt="Instagram Post" class="w-full h-32 object-cover grayscale opacity-80 hover:opacity-100 transition-opacity" data-alt="A minimalist architectural interior showing a stark concrete wall bathed in dramatic, high-contrast natural light. Shadows form sharp geometric angles across the textured surface. The scene uses a deep charcoal and pale gray color palette, embodying a brutalist yet contemplative aesthetic typical of modern sanctuary spaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT_ci807hHjm0qvl_VeyMGoyCjJIojKtBiXzwD0utRA9HGe8EeuKJOsMHp8ZO8B3dWuBl2-EYPX9nKOGaiBSvz0J90ipW59sIBczZ9t8MFE5lwV7Htlr2xFZWCHjE-IOkYzH9_lQsipQ2zrq_0j7zcBOTCNBQpENxTe43ebadImwkBjv_hJnU9jCPh00HttbPan7kCK8GxtbabqDSrsrsGCh25Dw_qjAtZfZeAYg85rAgVeb6HNYzmwr0Ehnqq05Zn9q2YwqnMJA"/>
+<img alt="Instagram Post" class="w-full h-32 object-cover grayscale opacity-80 hover:opacity-100 transition-opacity duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT_ci807hHjm0qvl_VeyMGoyCjJIojKtBiXzwD0utRA9HGe8EeuKJOsMHp8ZO8B3dWuBl2-EYPX9nKOGaiBSvz0J90ipW59sIBczZ9t8MFE5lwV7Htlr2xFZWCHjE-IOkYzH9_lQsipQ2zrq_0j7zcBOTCNBQpENxTe43ebadImwkBjv_hJnU9jCPh00HttbPan7kCK8GxtbabqDSrsrsGCh25Dw_qjAtZfZeAYg85rAgVeb6HNYzmwr0Ehnqq05Zn9q2YwqnMJA"/>
 </div>
 </div>
 </div>
 </section>
+<hr class="divider-glow" />
 <!-- Magazine Block -->
-<section class="bg-secondary text-on-secondary py-block-gap-lg px-margin-mobile md:px-margin-desktop text-center">
-<div class="max-w-4xl mx-auto">
-<span class="material-symbols-outlined text-4xl mb-6 block mx-auto" data-icon="format_quote">format_quote</span>
-<h2 class="font-headline-md text-headline-md uppercase leading-tight mb-8">
+<section class="section-in bg-secondary text-on-secondary py-block-gap-lg px-margin-mobile md:px-margin-desktop text-center shimmer-bar">
+<div class="max-w-4xl mx-auto reveal">
+<span aria-hidden="true" class="material-symbols-outlined text-4xl mb-6 block mx-auto pulse-icon">format_quote</span>
+<blockquote class="font-headline-md text-headline-md leading-tight mb-8">
                     Structured minimalism is not the absence of design, but the intense focus on purpose.
-                </h2>
-<span class="font-label-bold text-label-bold uppercase tracking-widest border-t-2 border-on-secondary/30 pt-4 inline-block">Design Philosophy</span>
+                </blockquote>
+<span class="font-label-bold text-label-bold uppercase tracking-widest border-t-2 border-on-secondary/30 pt-4 inline-block not-italic">Design Philosophy</span>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary font-body-md text-body-md w-full bottom-0 border-t border-outline-variant/20 mt-auto">
+<footer aria-label="Site footer" class="bg-surface-container-lowest w-full border-t border-outline-variant/20 mt-auto" role="contentinfo">
 <div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-12 gap-8 max-w-[1440px] mx-auto">
-<div class="font-headline-md text-headline-md font-bold text-on-surface uppercase">
-                DwellPraise
-            </div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface">DwellPraise<sup class="text-[0.5em] align-top ml-0.5 opacity-70">™</sup></div>
+<div aria-label="Social media links" class="flex items-center gap-4" role="list">
+<a aria-label="Follow us on Instagram" class="text-on-surface-variant hover:text-primary social-icon icon-hover tooltip" data-tooltip="Instagram" href="https://www.instagram.com/dwellpraise" rel="noopener noreferrer" role="listitem" target="_blank">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+</a>
+<a aria-label="Follow us on Bluesky" class="text-on-surface-variant hover:text-primary social-icon icon-hover tooltip" data-tooltip="Bluesky" href="https://bsky.app/profile/dwellpraise.bsky.social" rel="noopener noreferrer" role="listitem" target="_blank">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.162c-3.204 0-6.1.726-8.565 2.098C1.934 5.388.5 7.46.5 9.89c0 1.484.58 2.827 1.536 3.846l-.002.002c1.235 1.328 2.97 2.168 4.91 2.305.428.83.918 1.6 1.467 2.313l.003-.003c.364.473.756.924 1.18 1.352.496.498 1.034.956 1.606 1.37.166.12.336.235.51.346.26.165.528.32.802.465.278.146.565.28.857.4.215.093.432.181.652.263.245.094.494.18.746.258.236.074.474.142.714.203.273.07.55.13.828.18.227.04.454.074.683.1.288.034.578.058.87.07v-1.116c-.29-.01-.579-.033-.864-.067-.222-.025-.443-.06-.662-.102-.272-.05-.543-.112-.81-.185-.226-.063-.45-.133-.673-.206l-.003.002c-.24-.079-.478-.164-.713-.256-.178-.07-.355-.144-.53-.222-.278-.125-.552-.258-.82-.399-.257-.135-.51-.28-.758-.433l-.003-.002c-.222-.139-.44-.284-.653-.438-.255-.184-.505-.376-.746-.578-.13-.108-.258-.218-.384-.332-.345-.314-.671-.65-.976-1.007l.007-.006c-.29-.339-.557-.699-.8-1.078l.002.003c-.244-.381-.464-.78-.66-1.196l.002-.002c1.032-.152 1.98-.508 2.814-1.016.948.468 1.97.74 3.046.74s2.098-.272 3.046-.74c.834.508 1.782.864 2.814 1.016-.196.416-.416.815-.66 1.196l.003-.003c-.242.38-.51.74-.8 1.078l.005.006c-.305.357-.631.693-.976 1.007-.126.114-.254.224-.384.332-.241.202-.491.394-.746.578-.213.154-.431.299-.653.438-.248.153-.5.298-.758.433-.268.141-.542.274-.82.399-.175.078-.352.152-.53.222-.235.092-.473.177-.713.256l-.003.002c-.223.073-.447.143-.673.206-.267.073-.538.135-.81.185-.22.042-.44.077-.662.102-.285.034-.574.057-.864.067v1.116c.292-.012.582-.036.87-.07.229-.026.456-.06.683-.1.278-.05.555-.11.828-.18.24-.061.478-.129.714-.203.252-.078.501-.164.746-.258.22-.082.437-.17.652-.263.292-.12.579-.254.857-.4.274-.145.542-.3.802-.465.174-.111.344-.226.51-.346.572-.414 1.11-.872 1.606-1.37.424-.428.816-.879 1.18-1.352l.003.003c.549-.713 1.04-1.483 1.467-2.313 1.94-.137 3.675-.977 4.91-2.305l-.001-.002c.956-1.02 1.536-2.362 1.536-3.846 0-2.43-1.434-4.502-2.935-5.63C18.1 2.888 15.204 2.162 12 2.162z"/></svg>
+</a>
+<a aria-label="Read our Substack" class="text-on-surface-variant hover:text-primary social-icon icon-hover tooltip" data-tooltip="Substack" href="https://substack.com/@dwellpraise" rel="noopener noreferrer" role="listitem" target="_blank">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.078v2.836zM1.46 10.881H22.54v2.836H1.46v-2.836zM1.46 16.356h21.078v7.644L12 18.73l-10.54 5.27v-7.644z"/></svg>
+</a>
+<a aria-label="Follow us on X" class="text-on-surface-variant hover:text-primary social-icon icon-hover tooltip" data-tooltip="X (Twitter)" href="https://x.com/dwellpraise" rel="noopener noreferrer" role="listitem" target="_blank">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+</a>
+<a aria-label="Join our WhatsApp channel" class="text-on-surface-variant hover:text-primary social-icon icon-hover tooltip" data-tooltip="WhatsApp" href="https://whatsapp.com/channel/0029Vb8ASUxC6ZvcQiTnL83a" rel="noopener noreferrer" role="listitem" target="_blank">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.008c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<a aria-label="Watch on YouTube" class="text-on-surface-variant hover:text-primary social-icon icon-hover tooltip" data-tooltip="YouTube" href="https://m.youtube.com/@dwellpraise" rel="noopener noreferrer" role="listitem" target="_blank">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+</a>
+</div>
 <div class="flex items-center gap-6">
 <a class="text-on-surface-variant hover:text-primary transition-colors uppercase font-label-bold text-caption" href="contact.html#privacy">Privacy</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors uppercase font-label-bold text-caption" href="contact.html#terms">Terms</a>
 <a class="text-primary font-bold uppercase font-label-bold text-caption" href="media.html">Social Hub</a>
 </div>
-<div class="text-on-surface-variant text-sm text-center md:text-right">
-                © 2026 DwellPraise. Nevertheless the Gospel shall be preached.
-            </div>
+<div class="text-on-surface-variant text-sm text-center md:text-right">&copy; <span class="copyright-year">2026</span> DwellPraise<sup class="text-[0.5em] align-top ml-0.5 opacity-70">™</sup>. All rights reserved. Nevertheless the Gospel shall be preached.</div>
 </div>
 </footer>
+<script src="assets/shared.js"></script>
+<script src="assets/social-feed.js"></script>
 </body></html>
