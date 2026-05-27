@@ -447,6 +447,28 @@ sup.tm, .tm {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* ========== Badge / Tag ========== */
+.badge {
+  display: inline-block;
+  border-radius: 9999px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* ========== Icon Square Button ========== */
+.icon-square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.3s var(--ease-spring);
+}
+.icon-square:hover {
+  transform: scale(1.08);
+}
+
 /* ========== Link Underline Hover ========== */
 .link-hover {
   position: relative;
