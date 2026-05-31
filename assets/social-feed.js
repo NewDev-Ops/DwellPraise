@@ -230,17 +230,45 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
+function renderSubstackCard(post, containerId) {
+  var container = document.getElementById(containerId);
+  if (!container || !post) return;
+
+  var date = '';
+  if (post.pubDate) {
+    var d = new Date(post.pubDate);
+    date = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  }
+
+  var desc = post.description ? post.description.substring(0, 150) : '';
+  if (post.description && post.description.length > 150) desc = desc + '...';
+
+  var imgSrc = escapeHtml(post.image || 'https://lh3.googleusercontent.com/aida-public/AB6AXuAtlSheWSrVLx91J_y5kjQn9toXAQ0JAb66h5BlcJnbFJMICnyOONrDLV6BKtOyAsXcmilVNb7-ptZHQv8uNmzYEJkj25CjT-PWNJffyUxpdNFt-OVTyzREzgZX2Gn6Ovwgn4PwCCkuc_qLOolcnuaQXyrcZdOtoEYlm7vZdhlYWN0CUyPi133FQ94Up95atAcpL1ZsF_j4CDZINFI1XyX8QLmg7S2SdQesckj87xKkBAAQjp5Fviaax0eL85qYRpxI7v9VWJx3FA');
+
+  container.outerHTML = '<a id="' + containerId + '" href="' + escapeHtml(post.link) + '" target="_blank" rel="noopener noreferrer" class="md:col-span-8 row-span-2 relative group overflow-hidden border border-outline-variant/20 bg-surface-container card-image-zoom card-glow reveal visible block" data-delay="100">' +
+    '<img alt="' + escapeHtml(post.title) + '" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700 grayscale" src="' + imgSrc + '" loading="lazy"/>' +
+    '<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>' +
+    '<div class="absolute bottom-0 left-0 p-8">' +
+    '<span class="inline-block bg-secondary text-on-secondary px-3 py-1 font-label-bold text-caption uppercase mb-4">Latest Article' + (date ? ' &middot; ' + date : '') + '</span>' +
+    '<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-2">' + escapeHtml(post.title) + '</h3>' +
+    (desc ? '<p class="font-body-md text-body-md text-on-surface-variant max-w-md">' + escapeHtml(desc) + '</p>' : '') +
+    '</div>' +
+    '</a>';
+}
+
 function initSocialFeeds() {
-  fetchYouTubeLatest().then(function (video) {
-    if (video) {
-      renderYouTubeCard(video, 'youtube-latest');
-      renderYouTubeMessagesCard(video, 'youtube-messages');
+  fetchSubstackLatest(4).then(function (posts) {
+    if (posts.length > 0) {
+      renderSubstackCard(posts[0], 'substack-latest-card');
+    }
+    if (posts.length > 1) {
+      renderSubstackPosts(posts.slice(1), 'substack-latest');
     }
   });
 
-  fetchSubstackLatest(3).then(function (posts) {
-    if (posts.length > 0) {
-      renderSubstackPosts(posts, 'substack-latest');
+  fetchYouTubeLatest().then(function (video) {
+    if (video) {
+      renderYouTubeMessagesCard(video, 'youtube-messages');
     }
   });
 
