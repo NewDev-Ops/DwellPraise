@@ -283,11 +283,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ========== Active Nav Highlight ==========
-  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  var currentPath = window.location.pathname.replace(/\/$/, '') || '/';
   var navItems = document.querySelectorAll('[role="menubar"] a[href], .mobile-nav a[href]');
   navItems.forEach(function (link) {
-    var linkPage = link.getAttribute('href');
-    if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+    var linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, '') || '/';
+    if (linkPath === currentPath) {
       link.classList.add('text-secondary', 'border-b-2', 'border-secondary', 'pb-1');
       link.classList.remove('text-on-surface-variant', 'nav-link');
     }

@@ -3,11 +3,11 @@
 > One Gospel, Many Platforms. A Christian ministry cultivating dwelling places for God through structured, intentional content.
 
 ## Core Pages
-- [Home](https://dwellpraise.gt.tc/index.html): Main hub and introductory portal.
-- [About](https://dwellpraise.gt.tc/about.html): Our mission, vision, and core ministry goals.
-- [Media Hub](https://dwellpraise.gt.tc/media.html): Video and audio resources spanning multiple platforms.
-- [Encounter Generosity](https://dwellpraise.gt.tc/generosity.html): Empowering businesses and relieving urgent needs through structured generosity.
-- [Contact](https://dwellpraise.gt.tc/contact.html): Get in touch with the DwellPraise ministry team.
+- [Home](https://dwellpraise.gt.tc/): Main hub and introductory portal.
+- [About](https://dwellpraise.gt.tc/about): Our mission, vision, and core ministry goals.
+- [Media Hub](https://dwellpraise.gt.tc/media): Video and audio resources spanning multiple platforms.
+- [Encounter Generosity](https://dwellpraise.gt.tc/generosity): Empowering businesses and relieving urgent needs through structured generosity.
+- [Contact](https://dwellpraise.gt.tc/contact): Get in touch with the DwellPraise ministry team.
 
 ## What We Do
 DwellPraise is a digital ministry that distributes the Gospel across multiple platforms including YouTube, Substack, Instagram, Bluesky, X (Twitter), and WhatsApp. We create sermons, worship content, podcasts, and community stories.

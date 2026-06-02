@@ -1,11 +1,26 @@
 RewriteEngine On
+
+# Redirect HTTP to HTTPS
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Strip .html extensions (301 redirect to clean URL)
+RewriteCond %{REQUEST_URI} \.html$
+RewriteCond %{REQUEST_URI} !^/assets/
+RewriteRule ^(.+)\.html$ /$1 [L,R=301]
+
+# Route clean URLs to actual .html files (internal rewrite)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.+)$ $1.html [L]
+
+# Gzip Compression
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json image/svg+xml
 </IfModule>
 
+# Browser Caching
 <IfModule mod_headers.c>
   <FilesMatch "\.(css|js|html|htm|xml|json|svg)$">
     Header set Cache-Control "max-age=86400, public"
