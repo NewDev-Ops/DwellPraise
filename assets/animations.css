@@ -1115,3 +1115,34 @@ select:focus-visible {
   background: linear-gradient(90deg, #a1d494, #ffb68c);
   border-radius: 1px;
 }
+
+/* ========== Mobile Layout Optimization (<480px) ========== */
+@media (max-width: 479px) {
+  /* Tighten all section vertical spacing on mobile */
+  .py-block-gap-lg {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  /* Tighten hero sections specifically */
+  .hero-home,
+  .hero-gradient-media,
+  .hero-gradient-eg {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  /* Contact page main hero uses <main> tag, not a section */
+  main[id="main-content"].py-block-gap-lg {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  /* Ensure all CTA buttons have 48px minimum touch target */
+  .btn-shimmer,
+  .btn-hover,
+  .ripple {
+    min-height: 48px;
+  }
+  /* Tighten CTA wrapper margins on mobile */
+  .hero-cta {
+    margin-top: 1.25rem;
+  }
+}

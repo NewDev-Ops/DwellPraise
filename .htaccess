@@ -4,16 +4,10 @@ RewriteEngine On
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Strip .html extensions (301 redirect to clean URL)
-RewriteCond %{REQUEST_URI} \.html$
-RewriteCond %{REQUEST_URI} !^/assets/
-RewriteRule ^(.+)\.html$ /$1 [L,R=301]
-
-# Route clean URLs to actual .html files (internal rewrite)
+# Route clean URLs to actual .html files (internal rewrite only, no redirect)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-l
-RewriteRule ^(.+)$ $1.html [L]
+RewriteRule ^(.+)$ /$1.html [L]
 
 # Gzip Compression
 <IfModule mod_deflate.c>
