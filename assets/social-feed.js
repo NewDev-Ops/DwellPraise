@@ -244,9 +244,10 @@ function renderSubstackCard(post, containerId) {
   if (post.description && post.description.length > 150) desc = desc + '...';
 
   var imgSrc = escapeHtml(post.image || 'https://lh3.googleusercontent.com/aida-public/AB6AXuAtlSheWSrVLx91J_y5kjQn9toXAQ0JAb66h5BlcJnbFJMICnyOONrDLV6BKtOyAsXcmilVNb7-ptZHQv8uNmzYEJkj25CjT-PWNJffyUxpdNFt-OVTyzREzgZX2Gn6Ovwgn4PwCCkuc_qLOolcnuaQXyrcZdOtoEYlm7vZdhlYWN0CUyPi133FQ94Up95atAcpL1ZsF_j4CDZINFI1XyX8QLmg7S2SdQesckj87xKkBAAQjp5Fviaax0eL85qYRpxI7v9VWJx3FA');
+  var imgAlt = escapeHtml(post.title || 'Latest article');
 
   container.outerHTML = '<a id="' + containerId + '" href="' + escapeHtml(post.link) + '" target="_blank" rel="noopener noreferrer" class="md:col-span-8 row-span-2 relative group overflow-hidden border border-outline-variant/20 bg-surface-container card-image-zoom card-glow reveal visible block" data-delay="100">' +
-    '<img alt="' + escapeHtml(post.title) + '" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700 grayscale" src="' + imgSrc + '" loading="lazy"/>' +
+    '<img alt="' + imgAlt + '" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700 grayscale" width="800" height="600" loading="lazy" src="' + imgSrc + '"/>' +
     '<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>' +
     '<div class="absolute bottom-0 left-0 p-8">' +
     '<span class="inline-block bg-secondary text-on-secondary px-3 py-1 font-label-bold text-caption uppercase mb-4">Latest Article' + (date ? ' &middot; ' + date : '') + '</span>' +
