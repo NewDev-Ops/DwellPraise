@@ -1,12 +1,17 @@
 # DwellPraise
 
-> One Gospel, Many Platforms. A Christian ministry cultivating dwelling places for God through structured, intentional content.
+> One Gospel, Many Platforms. A Christian ministry founded by Remoir and Angela, cultivating dwelling places for God through structured, intentional content.
+
+## Origin Story
+- November 16, 2025: Encounter is born — two people gathering to fellowship and pray in the Word daily.
+- January 23, 2026: The Encounter Foundation is formed by founders Remoir and Angela, rooted in a deep conviction about generosity.
+- May 5, 2026: DwellPraise Ministries officially begins as an avenue to spread the Gospel across multiple platforms.
 
 ## Core Pages
 - [Home](https://dwellpraise.gt.tc/): Main hub and introductory portal.
 - [About](https://dwellpraise.gt.tc/about): Our mission, vision, and core ministry goals.
 - [Media Hub](https://dwellpraise.gt.tc/media): Video and audio resources spanning multiple platforms.
-- [Encounter Generosity](https://dwellpraise.gt.tc/generosity): Empowering businesses and relieving urgent needs through structured generosity.
+- [Give](https://dwellpraise.gt.tc/give): Empowering businesses and relieving urgent needs through structured generosity.
 - [Contact](https://dwellpraise.gt.tc/contact): Get in touch with the DwellPraise ministry team.
 
 ## What We Do
@@ -19,3 +24,5 @@ DwellPraise is a digital ministry that distributes the Gospel across multiple pl
 - Bluesky: https://bsky.app/profile/dwellpraise.bsky.social
 - X (Twitter): https://x.com/dwellpraise
 - WhatsApp: https://whatsapp.com/channel/0029Vb8ASUxC6ZvcQiTnL83a
+- Facebook: https://facebook.com/dwellpraise
+- LinkedIn: https://linkedin.com/company/dwellpraise
