@@ -9,6 +9,13 @@
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 24px rgba(161, 212, 148, 0.15);
+  --transition-fast: 150ms var(--ease-out-expo);
+  --transition-base: 250ms var(--ease-out-expo);
+  --transition-slow: 400ms var(--ease-out-expo);
 }
 
 /* ========== Page Load Entrance ========== */
@@ -961,6 +968,11 @@ html {
     scroll-behavior: auto !important;
   }
   .page-loader { display: none !important; }
+  .ken-burns { animation: none !important; transform: none !important; }
+  .pulse-icon { animation: none !important; }
+  .gentle-float { animation: none !important; }
+  .breath { animation: none !important; }
+  .count-up { animation: none !important; }
 }
 
 /* ========== Global Focus-Visible Ring ========== */
@@ -1046,26 +1058,8 @@ select:focus-visible {
   border-color: rgba(255, 180, 171, 0.18);
   box-shadow: 0 0 0 1px rgba(255, 180, 171, 0.04), 0 8px 32px rgba(0,0,0,0.2);
 }
-.card-lift:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3),
-              0 0 0 1px rgba(161, 212, 148, 0.08);
-}
-
-/* ========== Card Glow ========== */
-.card-glow {
-  position: relative;
-  border: 1px solid rgba(68, 71, 72, 0.2);
-  transition: border-color 0.5s ease, box-shadow 0.5s ease;
-}
-.card-glow:hover {
-  border-color: rgba(161, 212, 148, 0.18);
-  box-shadow: 0 0 0 1px rgba(161, 212, 148, 0.04), 0 8px 32px rgba(0,0,0,0.2);
-}
-.card-glow-error:hover {
-  border-color: rgba(255, 180, 171, 0.18);
-  box-shadow: 0 0 0 1px rgba(255, 180, 171, 0.04), 0 8px 32px rgba(0,0,0,0.2);
-}
+/* ========== Loading Spinner (centralized from contact form) ========== */
+@keyframes spin { to { transform: rotate(360deg); } }
 
 /* ========== Reveal refinement ========== */
 .reveal,
@@ -1074,6 +1068,32 @@ select:focus-visible {
 .reveal-scale,
 .section-in {
   will-change: transform, opacity;
+}
+
+/* ========== Scripture Carousel ========== */
+.scripture-carousel {
+  position: relative;
+  min-height: 200px;
+}
+.scripture-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.8s var(--ease-out-expo),
+              transform 0.8s var(--ease-out-expo);
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+.scripture-slide.active {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 /* ========== Section Entrance Animation ========== */
@@ -1114,6 +1134,20 @@ select:focus-visible {
   height: 2px;
   background: linear-gradient(90deg, #a1d494, #ffb68c);
   border-radius: 1px;
+}
+
+/* ========== Tablet Layout Optimization (480px-768px) ========== */
+@media (min-width: 480px) and (max-width: 768px) {
+  .py-block-gap-lg {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .hero-home,
+  .hero-gradient-media,
+  .hero-gradient-eg {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 
 /* ========== Mobile Layout Optimization (<480px) ========== */

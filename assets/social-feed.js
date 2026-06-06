@@ -16,6 +16,7 @@ var SOCIAL_CONFIG = {
 };
 
 var CORS_PROXY = 'https://api.allorigins.win/get?url=';
+var CORS_PROXY_FALLBACK = 'https://api.allorigins.io/get?url=';
 
 function fetchWithCache(url, cacheKey) {
   var cached = localStorage.getItem(cacheKey);
@@ -41,8 +42,21 @@ function fetchWithCache(url, cacheKey) {
       return contents;
     })
     .catch(function (error) {
-      console.error('[Social Feed] Fetch failed for ' + url + ':', error);
-      return cached ? JSON.parse(cached).data : null;
+      console.warn('[Social Feed] Primary proxy failed, trying fallback for ' + url + ':', error);
+      return fetch(CORS_PROXY_FALLBACK + encodeURIComponent(url))
+        .then(function (resp) {
+          if (!resp.ok) throw new Error('Fallback HTTP ' + resp.status);
+          return resp.json();
+        })
+        .then(function (proxyData) {
+          var contents = proxyData.contents;
+          localStorage.setItem(cacheKey, JSON.stringify({ data: contents, timestamp: Date.now() }));
+          return contents;
+        })
+        .catch(function (fallbackError) {
+          console.error('[Social Feed] All proxies failed for ' + url + ':', fallbackError);
+          return cached ? JSON.parse(cached).data : null;
+        });
     });
 }
 
@@ -243,7 +257,7 @@ function renderSubstackCard(post, containerId) {
   var desc = post.description ? post.description.substring(0, 150) : '';
   if (post.description && post.description.length > 150) desc = desc + '...';
 
-  var imgSrc = escapeHtml(post.image || 'https://lh3.googleusercontent.com/aida-public/AB6AXuAtlSheWSrVLx91J_y5kjQn9toXAQ0JAb66h5BlcJnbFJMICnyOONrDLV6BKtOyAsXcmilVNb7-ptZHQv8uNmzYEJkj25CjT-PWNJffyUxpdNFt-OVTyzREzgZX2Gn6Ovwgn4PwCCkuc_qLOolcnuaQXyrcZdOtoEYlm7vZdhlYWN0CUyPi133FQ94Up95atAcpL1ZsF_j4CDZINFI1XyX8QLmg7S2SdQesckj87xKkBAAQjp5Fviaax0eL85qYRpxI7v9VWJx3FA');
+  var imgSrc = escapeHtml(post.image || 'assets/Banner.png');
   var imgAlt = escapeHtml(post.title || 'Latest article');
 
   container.outerHTML = '<a id="' + containerId + '" href="' + escapeHtml(post.link) + '" target="_blank" rel="noopener noreferrer" class="md:col-span-8 row-span-2 relative group overflow-hidden border border-outline-variant/20 bg-surface-container card-image-zoom card-glow reveal visible block" data-delay="100">' +

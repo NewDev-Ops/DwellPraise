@@ -181,7 +181,6 @@
   #contact-form.loading button .btn-spinner { display: flex; }
   .btn-spinner { display: none; position: absolute; inset: 0; align-items: center; justify-content: center; }
   .btn-spinner::after { content: ''; width: 20px; height: 20px; border: 2px solid transparent; border-top-color: currentColor; border-radius: 50%; animation: spin 0.6s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
 </style>
 </head>
 <body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary page-noise">
@@ -248,9 +247,9 @@
 <div class="lg:col-span-8 bg-surface-container p-8 md:p-12 border border-outline-variant/20 card-lift reveal card-glow" data-delay="100">
 <form action="https://formsubmit.co/dwellpraiseministries@gmail.com" class="contact-form flex flex-col gap-8" id="contact-form" method="POST" novalidate>
 <input name="_subject" type="hidden" value="New Contact - DwellPraise™ Website"/>
-<input name="_captcha" type="hidden" value="false"/>
+<input name="_captcha" type="hidden" value="true"/>
 <input name="_template" type="hidden" value="table"/>
-<input name="_next" type="hidden" value="https://dwellpraise.gt.tc/contact"/>
+<input name="_next" type="hidden" value="https://dwellpraise.gt.tc/contact?submitted=true"/>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="form-input-wrapper flex flex-col gap-2">
 <label class="font-label-bold text-label-bold text-on-surface uppercase tracking-wider" for="first-name">First Name</label>
@@ -445,10 +444,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Check for success redirect
-  if (window.location.search.indexOf('submitted=true') !== -1 || document.referrer.indexOf('formsubmit.co') !== -1) {
+  // Check for success redirect (FormSubmit returns to same page after submission)
+  if (window.location.search.indexOf('submitted=true') !== -1 || document.referrer.indexOf('formsubmit') !== -1 || window.location.hash === '#success') {
     form.style.display = 'none';
     successEl.classList.add('visible');
+    // Clear hash if present
+    if (window.location.hash === '#success') {
+      history.replaceState(null, '', window.location.pathname);
+    }
   }
 });
 </script>

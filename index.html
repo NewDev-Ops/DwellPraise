@@ -273,7 +273,7 @@
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[300px]">
 <!-- Substack Article Card -->
 <a id="substack-latest-card" aria-label="Latest Substack article" href="https://substack.com/@dwellpraise" rel="noopener noreferrer" target="_blank" class="md:col-span-8 row-span-2 relative group overflow-hidden border border-outline-variant/20 bg-surface-container card-image-zoom card-glow reveal block" data-delay="100">
-<img alt="Article thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 grayscale group-hover:grayscale-0 transition-all duration-700" height="600" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtlSheWSrVLx91J_y5kjQn9toXAQ0JAb66h5BlcJnbFJMICnyOONrDLV6BKtOyAsXcmilVNb7-ptZHQv8uNmzYEJkj25CjT-PWNJffyUxpdNFt-OVTyzREzgZX2Gn6Ovwgn4PwCCkuc_qLOolcnuaQXyrcZdOtoEYlm7vZdhlYWN0CUyPi133FQ94Up95atAcpL1ZsF_j4CDZINFI1XyX8QLmg7S2SdQesckj87xKkBAAQjp5Fviaax0eL85qYRpxI7v9VWJx3FA" width="800"/>
+<img alt="Article thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 grayscale group-hover:grayscale-0 transition-all duration-700" height="600" loading="lazy" src="assets/Banner.png" width="800"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
 <div class="absolute bottom-0 left-0 p-8">
 <span class="badge inline-block bg-secondary text-on-secondary px-3 py-1 font-label-bold text-caption uppercase mb-4">Latest Article</span>
@@ -288,7 +288,7 @@
 <span class="font-label-bold text-caption uppercase">Bluesky</span>
 </div>
 <div>
-<p class="font-body-lg text-body-lg text-on-surface italic">"God can change your situation"</p>
+<p class="font-body-lg text-body-lg text-on-surface italic">"Praise is the dwelling place of God"</p>
 <span class="font-label-bold text-caption text-on-surface-variant uppercase mt-4 block">@dwellpraise.bsky.social</span>
 </div>
 </a>
@@ -304,15 +304,44 @@
 </a>
 </div>
 </section>
-<!-- Magazine Block -->
+<!-- Scripture Carousel -->
 <hr class="divider-glow" />
-<section aria-label="Scripture quote" class="section-in bg-secondary text-on-secondary py-block-gap-lg px-margin-mobile md:px-margin-desktop text-center shimmer-bar">
-<h2 class="sr-only">Worship and the Gospel</h2>
-<div class="max-w-4xl mx-auto reveal">
+<section aria-label="Scripture verses" class="section-in bg-secondary text-on-secondary py-block-gap-lg px-margin-mobile md:px-margin-desktop text-center shimmer-bar">
+<h2 class="sr-only">Scripture Verses</h2>
+<div class="max-w-4xl mx-auto reveal scripture-carousel">
 <span aria-hidden="true" class="material-symbols-outlined text-4xl mb-6 block mx-auto pulse-icon">format_quote</span>
+<div class="scripture-slide active">
 <blockquote class="font-headline-md text-headline-md leading-tight mb-8">And they went out and preached everywhere, the Lord working with them and confirming the word through the accompanying signs. Amen.</blockquote>
 <cite class="font-label-bold text-label-bold uppercase tracking-widest border-t-2 border-on-secondary/30 pt-4 inline-block not-italic">Mark 16:20</cite>
 </div>
+<div class="scripture-slide">
+<blockquote class="font-headline-md text-headline-md leading-tight mb-8">Go therefore and make disciples of all the nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all things that I have commanded you; and lo, I am with you always, even to the end of the age. Amen.</blockquote>
+<cite class="font-label-bold text-label-bold uppercase tracking-widest border-t-2 border-on-secondary/30 pt-4 inline-block not-italic">Matthew 28:19-20</cite>
+</div>
+<div class="scripture-slide">
+<blockquote class="font-headline-md text-headline-md leading-tight mb-8">A little one shall become a thousand, and a small one a strong nation. I, the Lord, will hasten it in its time.</blockquote>
+<cite class="font-label-bold text-label-bold uppercase tracking-widest border-t-2 border-on-secondary/30 pt-4 inline-block not-italic">Isaiah 60:22</cite>
+</div>
+</div>
+<script>
+(function(){
+  var slides = document.querySelectorAll('.scripture-slide');
+  if (slides.length < 2) return;
+  var current = 0;
+  var interval = 7000;
+  function showSlide(index) {
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].classList.remove('active');
+    }
+    slides[index].classList.add('active');
+  }
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+  setInterval(nextSlide, interval);
+})();
+</script>
 </section>
 </main>
 <!-- Footer -->
