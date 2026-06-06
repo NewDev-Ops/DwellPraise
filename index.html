@@ -310,6 +310,7 @@
 <h2 class="sr-only">Scripture Verses</h2>
 <div class="max-w-4xl mx-auto reveal scripture-carousel">
 <span aria-hidden="true" class="material-symbols-outlined text-4xl mb-6 block mx-auto pulse-icon">format_quote</span>
+<div class="scripture-track">
 <div class="scripture-slide active">
 <blockquote class="font-headline-md text-headline-md leading-tight mb-8">And they went out and preached everywhere, the Lord working with them and confirming the word through the accompanying signs. Amen.</blockquote>
 <cite class="font-label-bold text-label-bold uppercase tracking-widest border-t-2 border-on-secondary/30 pt-4 inline-block not-italic">Mark 16:20</cite>
@@ -323,23 +324,32 @@
 <cite class="font-label-bold text-label-bold uppercase tracking-widest border-t-2 border-on-secondary/30 pt-4 inline-block not-italic">Isaiah 60:22</cite>
 </div>
 </div>
+</div>
 <script>
 (function(){
   var slides = document.querySelectorAll('.scripture-slide');
   if (slides.length < 2) return;
   var current = 0;
-  var interval = 7000;
-  function showSlide(index) {
-    for (var i = 0; i < slides.length; i++) {
-      slides[i].classList.remove('active');
-    }
-    slides[index].classList.add('active');
+  var displayMs = 5000;
+  var exitMs = 900;
+  var gapMs = 300;
+  var enterMs = 1100;
+  var totalMs = displayMs + exitMs + gapMs + enterMs;
+  function transitionTo(index) {
+    var currentSlide = slides[current];
+    var nextSlide = slides[index];
+    currentSlide.classList.remove('active');
+    currentSlide.classList.add('exit');
+    setTimeout(function () {
+      currentSlide.classList.remove('exit');
+      nextSlide.classList.add('active');
+    }, exitMs + gapMs);
+    current = index;
   }
   function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
+    transitionTo((current + 1) % slides.length);
   }
-  setInterval(nextSlide, interval);
+  setInterval(nextSlide, totalMs);
 })();
 </script>
 </section>
