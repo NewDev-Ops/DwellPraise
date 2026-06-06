@@ -1,9 +1,15 @@
 User-agent: *
 Allow: /
+
+# Disallow private/assets
 Disallow: /assets/
 Disallow: /*.json$
 
+# Sitemap location
 Sitemap: https://dwellpraise.gt.tc/sitemap.xml
+
+# Host directive
+Host: https://dwellpraise.gt.tc
 
 # Crawl delay for polite crawling
 Crawl-Delay: 10
