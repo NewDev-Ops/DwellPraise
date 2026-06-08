@@ -41,6 +41,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
 <link href="assets/animations.css" rel="stylesheet"/>
 <link rel="icon" href="assets/Dark%20Coloured.png" type="image/png"/>
+<link rel="shortcut icon" href="assets/Dark%20Coloured.png" type="image/png"/>
 <link rel="apple-touch-icon" href="assets/Dark%20Coloured.png"/>
 <link rel="alternate" hreflang="en" href="https://dwellpraise.gt.tc/contact"/>
 <script type="application/ld+json">
@@ -155,22 +156,6 @@
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   .skip-link { position: absolute; top: -100%; left: 1rem; z-index: 100; background: #a1d494; color: #0a3909; padding: 0.75rem 1.5rem; font-weight: 700; font-size: 14px; border-radius: 0.25rem; text-decoration: none; transition: top 0.2s ease; }
   .skip-link:focus { top: 1rem; }
-  .form-input-wrapper { position: relative; }
-  .form-input-wrapper::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #ffb68c; transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-  .form-input-wrapper:focus-within::after { width: 100%; }
-  .form-input-wrapper.has-error::after { background: #ffb4ab; width: 100%; }
-  .form-error { color: #ffb4ab; font-size: 12px; font-weight: 500; margin-top: 0.25rem; display: none; }
-  .form-input-wrapper.has-error .form-error { display: block; }
-  .form-input-wrapper.has-error input,
-  .form-input-wrapper.has-error textarea { border-color: #ffb4ab; }
-  .form-success { display: none; text-align: center; padding: 3rem 2rem; }
-  .form-success.visible { display: block; }
-  .form-success .check-icon { width: 64px; height: 64px; border-radius: 50%; background: #a1d494; color: #0a3909; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 32px; }
-  #contact-form.loading button { opacity: 0.6; pointer-events: none; }
-  #contact-form.loading button .btn-text { visibility: hidden; }
-  #contact-form.loading button .btn-spinner { display: flex; }
-  .btn-spinner { display: none; position: absolute; inset: 0; align-items: center; justify-content: center; }
-  .btn-spinner::after { content: ''; width: 20px; height: 20px; border: 2px solid transparent; border-top-color: currentColor; border-radius: 50%; animation: spin 0.6s linear infinite; }
 </style>
 </head>
 <body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary page-noise">
@@ -235,48 +220,11 @@
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter section-in">
 <!-- Contact Form -->
 <div class="lg:col-span-8 bg-surface-container p-8 md:p-12 border border-outline-variant/20 card-lift reveal card-glow" data-delay="100">
-<form action="https://formsubmit.co/dwellpraiseministries@gmail.com" class="contact-form flex flex-col gap-8" id="contact-form" method="POST" novalidate>
-<input name="_subject" type="hidden" value="New Contact - DwellPraise™ Website"/>
-<input name="_captcha" type="hidden" value="true"/>
-<input name="_template" type="hidden" value="table"/>
-<input name="_next" type="hidden" value="https://dwellpraise.gt.tc/contact?submitted=true"/>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="form-input-wrapper flex flex-col gap-2">
-<label class="font-label-bold text-label-bold text-on-surface uppercase tracking-wider" for="first-name">First Name</label>
-<input autocomplete="given-name" class="bg-transparent border-0 border-b border-outline text-on-surface font-body-md text-body-md focus:ring-0 focus:border-tertiary px-0 py-3 transition-colors duration-300 placeholder:text-on-surface-variant/50" id="first-name" name="First Name" placeholder="John" type="text"/>
-<span class="form-error" role="alert">Please enter your first name</span>
-</div>
-<div class="form-input-wrapper flex flex-col gap-2">
-<label class="font-label-bold text-label-bold text-on-surface uppercase tracking-wider" for="last-name">Last Name</label>
-<input autocomplete="family-name" class="bg-transparent border-0 border-b border-outline text-on-surface font-body-md text-body-md focus:ring-0 focus:border-tertiary px-0 py-3 transition-colors duration-300 placeholder:text-on-surface-variant/50" id="last-name" name="Last Name" placeholder="Doe" type="text"/>
-<span class="form-error" role="alert">Please enter your last name</span>
-</div>
-</div>
-<div class="form-input-wrapper flex flex-col gap-2">
-<label class="font-label-bold text-label-bold text-on-surface uppercase tracking-wider" for="email">Email Address</label>
-<input autocomplete="email" class="bg-transparent border-0 border-b border-outline text-on-surface font-body-md text-body-md focus:ring-0 focus:border-tertiary px-0 py-3 transition-colors duration-300 placeholder:text-on-surface-variant/50" id="email" name="Email" placeholder="hello@example.com" required="" type="email"/>
-<span class="form-error" role="alert">Please enter a valid email address</span>
-</div>
-<div class="form-input-wrapper flex flex-col gap-2">
-<label class="font-label-bold text-label-bold text-on-surface uppercase tracking-wider" for="message">Message</label>
-<textarea class="bg-transparent border-0 border-b border-outline text-on-surface font-body-md text-body-md focus:ring-0 focus:border-tertiary px-0 py-3 transition-colors duration-300 placeholder:text-on-surface-variant/50 resize-none" id="message" name="Message" placeholder="How can we help you?" required="" rows="4"></textarea>
-<span class="form-error" role="alert">Please enter your message</span>
-</div>
-<div class="mt-4">
-<button class="relative bg-primary text-on-primary px-12 py-4 font-label-bold text-label-bold uppercase tracking-widest hover:bg-primary-fixed transition-colors duration-300 inline-flex items-center gap-4 btn-shimmer btn-hover ripple" type="submit">
-<span class="btn-text">Send Message</span>
-<span aria-hidden="true" class="btn-text material-symbols-outlined">arrow_forward</span>
-<span aria-hidden="true" class="btn-spinner"></span>
-</button>
-</div>
-</form>
-<!-- Success State -->
-<div class="form-success" id="form-success">
-<div aria-hidden="true" class="check-icon">
-<span class="material-symbols-outlined">check</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-4">Message Sent</h3>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">Thank you for reaching out. We will get back to you soon. God bless.</p>
+<div class="flex flex-col items-center text-center py-12">
+<span aria-hidden="true" class="material-symbols-outlined text-6xl text-secondary mb-6" style="font-variation-settings: 'FILL' 1;">mail</span>
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase mb-4">Get In Touch</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-8">We'd love to hear from you. Send us an email and we'll get back to you as soon as possible.</p>
+<a href="mailto:dwellpraiseministries@gmail.com" class="inline-block bg-primary text-on-primary px-10 py-4 font-label-bold text-label-bold uppercase tracking-widest hover:bg-primary-fixed transition-colors duration-300 btn-shimmer btn-hover ripple">dwellpraiseministries@gmail.com</a>
 </div>
 </div>
 <!-- Info Card -->
@@ -344,7 +292,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
 <div id="privacy" class="bg-surface-container p-8 border border-outline-variant/20 card-lift reveal card-glow" data-delay="100">
 <h2 class="font-headline-md text-headline-md text-primary uppercase mb-4">Privacy Policy</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">DwellPraise™ respects your privacy. Information collected through our contact form is used solely to respond to your inquiries. We do not sell, share, or distribute personal data to third parties. By submitting the form, you consent to being contacted via the email or phone number provided.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">DwellPraise™ respects your privacy. Information collected through our communication channels is used solely to respond to your inquiries. We do not sell, share, or distribute personal data to third parties. By reaching out, you consent to being contacted via the email or phone number you provide.</p>
 </div>
 <div id="terms" class="bg-surface-container p-8 border border-outline-variant/20 card-lift reveal card-glow" data-delay="200">
 <h2 class="font-headline-md text-headline-md text-primary uppercase mb-4">Terms of Service</h2>
@@ -393,57 +341,5 @@
 </footer>
 <script src="assets/shared.js"></script>
 <script src="assets/social-feed.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var form = document.getElementById('contact-form');
-  var successEl = document.getElementById('form-success');
-  if (!form || !successEl) return;
-
-  form.addEventListener('submit', function(e) {
-    var valid = true;
-    var fields = form.querySelectorAll('input[required], textarea[required]');
-    fields.forEach(function(field) {
-      var wrapper = field.closest('.form-input-wrapper');
-      if (!wrapper) return;
-      if (!field.value.trim()) {
-        wrapper.classList.add('has-error');
-        valid = false;
-      } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
-        wrapper.classList.add('has-error');
-        valid = false;
-      } else {
-        wrapper.classList.remove('has-error');
-      }
-    });
-
-    if (!valid) {
-      e.preventDefault();
-      var firstError = form.querySelector('.has-error input, .has-error textarea');
-      if (firstError) firstError.focus();
-      return;
-    }
-
-    form.classList.add('loading');
-  });
-
-  // Clear error on input
-  form.querySelectorAll('input, textarea').forEach(function(field) {
-    field.addEventListener('input', function() {
-      var wrapper = field.closest('.form-input-wrapper');
-      if (wrapper) wrapper.classList.remove('has-error');
-    });
-  });
-
-  // Check for success redirect (FormSubmit returns to same page after submission)
-  if (window.location.search.indexOf('submitted=true') !== -1 || document.referrer.indexOf('formsubmit') !== -1 || window.location.hash === '#success') {
-    form.style.display = 'none';
-    successEl.classList.add('visible');
-    // Clear hash if present
-    if (window.location.hash === '#success') {
-      history.replaceState(null, '', window.location.pathname);
-    }
-  }
-});
-</script>
 </body>
 </html>
