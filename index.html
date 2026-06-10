@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
-<!-- Google Analytics -->
+<!-- Google Analytics — replace G-XXXXXXXXXX with your GA4 ID -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -41,9 +41,11 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
 <link href="assets/animations.css" rel="stylesheet"/>
-<link rel="icon" href="assets/Dark%20Coloured.png" type="image/png"/>
-<link rel="shortcut icon" href="assets/Dark%20Coloured.png" type="image/png"/>
-<link rel="apple-touch-icon" href="assets/Dark%20Coloured.png"/>
+<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png"/>
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
 <link rel="alternate" hreflang="en" href="https://dwellpraise.gt.tc/"/>
 <script type="application/ld+json">
 {
@@ -171,7 +173,7 @@
   .skip-link { position: absolute; top: -100%; left: 1rem; z-index: 100; background: #a1d494; color: #0a3909; padding: 0.75rem 1.5rem; font-weight: 700; font-size: 14px; border-radius: 0.25rem; text-decoration: none; transition: top 0.2s ease; }
   .skip-link:focus { top: 1rem; }
 </style>
-<!-- Facebook Pixel -->
+<!-- Facebook Pixel — replace YOUR_PIXEL_ID with your actual Pixel ID, then uncomment
 <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -181,12 +183,11 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  /* TODO: Replace YOUR_PIXEL_ID with your actual Facebook Pixel ID from Meta Business Suite */
   fbq('init', 'YOUR_PIXEL_ID');
   fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-<!-- End Facebook Pixel -->
+--><!-- End Facebook Pixel -->
 </head>
 <body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary page-noise">
 <div id="loader" class="page-loader" role="status" aria-label="Loading">

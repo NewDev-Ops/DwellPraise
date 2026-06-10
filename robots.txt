@@ -1,9 +1,10 @@
 User-agent: *
 Allow: /
 
-# Disallow private/assets
-Disallow: /assets/
+# Block private/source files
 Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.ps1$
 
 # Sitemap location
 Sitemap: https://dwellpraise.gt.tc/sitemap.xml
