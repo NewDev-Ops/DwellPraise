@@ -13,4 +13,4 @@ Sitemap: https://dwellpraise.gt.tc/sitemap.xml
 Host: https://dwellpraise.gt.tc
 
 # Crawl delay for polite crawling
-Crawl-Delay: 10
+Crawl-Delay: 3
