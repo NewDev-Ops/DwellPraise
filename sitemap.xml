@@ -54,4 +54,14 @@
       <image:title>DwellPraise Ministries Logo</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://dwellpraise.gt.tc/brand-clarity</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <image:image>
+      <image:loc>https://dwellpraise.gt.tc/DwellXHabit/@dwellpraise.png</image:loc>
+      <image:title>DwellPraise x HabitPraise Brand Clarity</image:title>
+    </image:image>
+  </url>
 </urlset>
