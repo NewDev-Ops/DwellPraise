@@ -16,6 +16,9 @@
   --transition-fast: 150ms var(--ease-out-expo);
   --transition-base: 250ms var(--ease-out-expo);
   --transition-slow: 400ms var(--ease-out-expo);
+  --foundation: #1F6EB2;
+  --foundation-dark: #004D99;
+  --foundation-light: #4A90D9;
 }
 
 /* ========== Page Load Entrance ========== */
@@ -342,9 +345,9 @@ input:focus, textarea:focus {
   opacity: 0;
   visibility: hidden;
   transform: translateY(12px);
-  transition: opacity 0.35s ease, transform 0.35s var(--ease-out-expo), visibility 0s 0.35s, background 0.25s ease, box-shadow 0.3s ease;
+  transition: opacity var(--transition-base), transform var(--transition-base), visibility 0s 250ms, background var(--transition-fast), box-shadow var(--transition-fast);
   z-index: 40;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  box-shadow: var(--shadow-md);
 }
 .back-to-top.visible {
   opacity: 1;
@@ -448,7 +451,7 @@ sup.tm, .tm {
 }
 .btn-hover:active {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-md);
 }
 
 /* ========== Badge / Tag ========== */
@@ -459,6 +462,11 @@ sup.tm, .tm {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   white-space: nowrap;
+}
+
+/* ========== Icon Filled Variant ========== */
+.icon-filled {
+  font-variation-settings: 'FILL' 1;
 }
 
 /* ========== Icon Square Button ========== */
@@ -604,15 +612,15 @@ sup.tm, .tm {
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, transform 0.2s var(--ease-out-expo), visibility 0s 0.2s;
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility 0s 150ms;
   pointer-events: none;
-  z-index: 50;
+  z-index: 55;
 }
 .tooltip:hover::before {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
-  transition: opacity 0.2s ease, transform 0.2s var(--ease-out-expo), visibility 0s 0s;
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility 0s 0s;
 }
 
 /* ========== Skeleton Loading ========== */
@@ -634,7 +642,7 @@ sup.tm, .tm {
   width: 0;
   height: 2px;
   background: linear-gradient(90deg, #a1d494, #ffb68c);
-  z-index: 9999;
+  z-index: 99999;
   transition: width 0.05s linear;
   pointer-events: none;
 }
@@ -800,7 +808,7 @@ sup.tm, .tm {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.6s var(--ease-out-expo), visibility 0.6s ease;
+  transition: opacity var(--transition-slow), visibility var(--transition-slow);
 }
 .page-loader.loaded {
   opacity: 0;
@@ -898,12 +906,12 @@ sup.tm, .tm {
   z-index: 47;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.35s ease, visibility 0s 0.35s;
+  transition: opacity var(--transition-base), visibility 0s 250ms;
 }
 .mobile-curtain.open {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.35s ease, visibility 0s 0s;
+  transition: opacity var(--transition-base), visibility 0s 0s;
 }
 
 /* ========== Image Frame ========== */
@@ -1008,7 +1016,7 @@ select:focus-visible {
 }
 .card-lift:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3),
+  box-shadow: var(--shadow-lg),
               0 0 0 1px rgba(161, 212, 148, 0.08);
 }
 

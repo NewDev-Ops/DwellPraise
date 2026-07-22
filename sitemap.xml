@@ -64,4 +64,24 @@
       <image:title>DwellPraise x HabitPraise Brand Clarity</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://dwellpraise.gt.tc/impacts</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dwellpraise.gt.tc/assets/EGLogo2.png</image:loc>
+      <image:title>Encounter Generosity Impact Records</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dwellpraise.gt.tc/donate</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://dwellpraise.gt.tc/assets/EGLogo2.png</image:loc>
+      <image:title>Give — DwellPraise Ministries &amp; Encounter Foundation</image:title>
+    </image:image>
+  </url>
 </urlset>

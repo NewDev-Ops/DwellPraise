@@ -226,7 +226,15 @@
   <!-- Full-width banner spanning edge to edge -->
   <div class="px-5 md:px-0">
     <div class="w-full banner-fade rounded-xl overflow-hidden">
-      <img alt="Welcome Home — DwellPraise" class="banner-glow ken-burns" fetchpriority="high" width="1920" height="600" loading="eager" src="assets/Banner.png"/>
+      <img id="hero-banner" alt="Welcome Home — DwellPraise" class="banner-glow ken-burns" fetchpriority="high" width="1920" height="600" loading="eager" src="assets/Banner.png"/>
+      <script>
+        (function() {
+          if (new Date().getDate() === 22) {
+            var b = document.getElementById('hero-banner');
+            if (b) { b.src = 'assets/Giving+Day+Template.jpg'; b.alt = 'Giving Day — DwellPraise'; }
+          }
+        })();
+      </script>
     </div>
   </div>
   <!-- Headline and verse flow from the banner -->
